@@ -1,0 +1,6 @@
+[user]
+	name = Saif Azmi
+	email = saif.azmi0108@gmail.com
+	signingkey = 9C7FF3C72A8C4685
+[core]
+	editor = vim

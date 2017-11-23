@@ -1,0 +1,27 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Auto Close HTML Tags",
+		"Color Highlighter",
+		"ColorPicker",
+		"Colorsublime",
+		"DevDocs",
+		"Emmet",
+		"Gist",
+		"Git",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
+		"SublimeLinter-flake8",
+		"WordCount"
+	]
+}

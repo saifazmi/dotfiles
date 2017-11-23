@@ -1,0 +1,39 @@
+{
+	"added_words":
+	[
+		"Blockchain",
+		"Google",
+		"Saifullah",
+		"Azmi"
+	],
+	"caret_extra_bottom": 0,
+	"caret_extra_top": 0,
+	"caret_extra_width": 7,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Colorsublime - Themes/ZeroDarkMatrix.tmTheme",
+	"fade_fold_buttons": false,
+	"fold_buttons": true,
+	"font_face": "Hack",
+	"font_options":
+	[
+		"subpixel_antialias"
+	],
+	"font_size": 11,
+	"ignored_packages":
+	[
+		"Markdown",
+		"Vintage"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"overlay_scroll_bars": "enabled",
+	"rulers":
+	[
+		120
+	],
+	"tab_size": 4,
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"word_wrap": true,
+	"wrap_width": 120
+}
