@@ -1,3 +1,5 @@
+#include ".Xresources.d/Darkside"
+
 URxvt.font: xft:SourceCodePro:size=11
 URxvt.background: #101010
 URxvt.foreground: #FF9800
