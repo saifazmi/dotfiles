@@ -1,0 +1,9 @@
+// These settings override both User and Default settings for the CSS syntax
+{
+    "word_wrap": true,
+    "wrap_width": 80,
+    "rulers":
+    [
+        80
+    ]
+}

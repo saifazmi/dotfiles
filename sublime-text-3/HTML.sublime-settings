@@ -1,0 +1,10 @@
+// These settings override both User and Default settings for the HTML syntax
+{
+    "word_wrap": true,
+    "wrap_width": 160,
+    "rulers":
+    [
+        160
+    ],
+    "highlight_line": true
+}
