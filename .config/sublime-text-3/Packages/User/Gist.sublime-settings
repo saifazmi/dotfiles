@@ -1,5 +1,5 @@
 {
-    "token": "GIST_APP_TOKEN",
+    "token": "GIST_API_TOKEN",
     "gist_prefix": "Snippet:",
     "update_on_save": false
 }
