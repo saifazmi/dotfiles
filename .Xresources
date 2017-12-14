@@ -1,8 +1,7 @@
 #include ".Xresources.d/Darkside"
 
-URxvt.font: xft:SourceCodePro:size=11
-URxvt.background: #101010
-URxvt.foreground: #FF9800
+URxvt.font: xft:Hack:size=11
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 10
+

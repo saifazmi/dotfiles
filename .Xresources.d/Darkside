@@ -2,13 +2,13 @@
 ! Generated with :
 ! XRDB2Xreources.py
 !
-*.foreground:  #bababa
-*.background:  #222324
+*.foreground:  #ff9800
+*.background:  #101010
 *.cursorColor: #bbbbbb
 !
 ! Black
 *.color0:      #000000
-*.color8:      #000000
+*.color8:      #626262
 !
 ! Red
 *.color1:      #e8341c
@@ -42,3 +42,4 @@
 *.colorBD:     #ffffff
 !*.colorIT:
 !*.colorUL:
+

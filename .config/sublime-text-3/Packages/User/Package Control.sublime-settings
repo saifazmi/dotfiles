@@ -15,6 +15,7 @@
 		"Gist",
 		"Git",
 		"GitGutter",
+		"GraphvizPreview",
 		"HTML-CSS-JS Prettify",
 		"Markdown Preview",
 		"MarkdownEditing",
@@ -22,6 +23,7 @@
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
+		"SublimeLinter-json",
 		"WordCount"
 	]
 }

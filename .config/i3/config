@@ -155,32 +155,27 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 	position top
+	font pango:Hack 8
 	
 	colors {
 		background #101010
+		statusline #ffffff
+        	separator #ff9800
+			
+		focused_workspace  #101010 #ff9800 #101010
+        	#active_workspace   #333333 #5f676a #ffffff
+        	#inactive_workspace #333333 #222222 #888888
+        	#urgent_workspace   #2f343a #900000 #ffffff
+        	#binding_mode       #2f343a #900000 #ffffff
 	}
 }
 
-# Power control mode
-set $power_control "[l]ock log[o]ut [s]uspend [r]eboot [p]oweroff"
-mode  $power_control {
-    bindsym l exec i3lock;			mode "default"
-    bindsym o exec i3-msg exit;			mode "default"
-    bindsym s exec i3lock && systemctl suspend;	mode "default"
-    bindsym r exec systemctl reboot;		mode "default"
-    bindsym p exec systemctl poweroff;		mode "default"
-
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+x mode $power_control
-
 # Borders
 # class                 border  backgr. text    indicator child_border
-client.focused          #FF9800 #FF9800 #101010 #FF9800   #FF9800
-#client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.focused          #ff9800 #ff9800 #101010 #ff9800   #ff9800
+client.focused_inactive #333333 #222222 #ffffff #484e50   #222222
 #client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-#client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.urgent           #2f343a #f44235 #ffffff #f44235   #900000
 #client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 #client.background       #ffffff
@@ -196,19 +191,65 @@ smart_gaps on
 bindsym $mod+bracketleft  gaps inner all minus 2 
 bindsym $mod+bracketright gaps inner all plus 2
 
+# Screen locker
+set $Locker ~/.config/i3/lock.sh && sleep 1
+set $LockSuspend ~/.config/i3/lockSuspend.sh
+
+# Power control mode
+set $power_control "[l]ock log[o]ut [s]uspend [r]eboot [p]oweroff"
+mode  $power_control {
+	bindsym l exec --no-startup-id $Locker; 		mode "default"
+    	bindsym o exec --no-startup-id i3-msg exit; 		mode "default"
+    	bindsym s exec --no-startup-id $LockSuspend; 		mode "default"
+    	bindsym r exec --no-startup-id systemctl reboot;	mode "default"
+    	bindsym p exec --no-startup-id systemctl poweroff; 	mode "default"
+	
+	# back to normal: Enter or Escape
+    	bindsym Return mode "default"
+    	bindsym Escape mode "default"
+}
+bindsym $mod+x mode $power_control
+
+# Monitor control mode
+set $monitor_control "[p]rimary [s]econdary [m]irror extend [j][k][l][;] or [cursor-keys]"
+mode $monitor_control {
+	bindsym p exec mons -o;	mode "default"
+	bindsym s exec mons -s;	mode "default"
+	bindsym m exec mons -m; mode "default"
+	
+	## Extend monitor
+	bindsym j exec mons -e left;		mode "default"
+	bindsym k exec mons -e bottom;		mode "default"
+	bindsym l exec mons -e top;		mode "default"
+	bindsym semicolon exec mons -e right;	mode "default" 
+	## Alternatively you can use cursor keys
+	bindsym Left exec mons -e left;		mode "default"
+	bindsym Down exec mons -e bottom;	mode "default"
+	bindsym Up exec mons -e top;		mode "default"
+	bindsym Right exec mons -e right;	mode "default"
+	
+	bindsym Return mode "default"
+    	bindsym Escape mode "default"
+}
+## XF86Display is not working
+bindsym $mod+m mode $monitor_control 
+
+# Toggle through every monitor setting
+bindsym $mod+Shift+m exec mons -n right
+
 # Audio controls (volume up, volume down, toggle mute)
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+    && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2%-    && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioMute 	     exec amixer -q set Master toggle && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioRaiseVolume exec amixer -q set Master on 2%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%-
+bindsym XF86AudioMute 	     exec amixer -q set Master toggle
 
 # Media keys
-bindsym XF86AudioPlay exec playerctl play-pause && pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioNext exec playerctl next   	&& pkill -SIGRTMIN+3 i3blocks
-bindsym XF86AudioPrev exec playerctl previous   && pkill -SIGRTMIN+3 i3blocks
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Sreen brightness controls (brightness up, brightness down)
-bindsym XF86MonBrightnessUp   exec light -A 2 && pkill -SIGRTMIN+2 i3blocks
-bindsym XF86MonBrightnessDown exec light -U 2 && pkill -SIGRTMIN+2 i3blocks
+bindsym XF86MonBrightnessUp   exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2
 
 # Printscreen saves screenshot (with shift only focused window)
 ## break this down into a screenshot mode just like the powersection above

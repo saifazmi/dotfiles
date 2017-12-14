@@ -104,8 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # EDITOR {{{
   if which vim &>/dev/null; then
     export EDITOR="vim"
-  elif which emacs &>/dev/null; then
-    export EDITOR="emacs -nw"
   else
     export EDITOR="nano"
   fi
@@ -133,6 +131,7 @@ source $ZSH/oh-my-zsh.sh
   alias free='free -m' # show sizes in MB
   alias subl='subl3'
   alias gcal='gcalcli --monday calw 1'
+  alias xclip='xclip -sel clip'
 #}}}
 
 # PRIVILEGED ACCESS {{{

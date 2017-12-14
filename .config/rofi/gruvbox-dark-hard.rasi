@@ -13,7 +13,7 @@
 
 * {
     selected-normal-foreground:  rgba ( 251, 241, 199, 100 % );
-    foreground:                  rgba ( 255, 152, 0, 100 % );
+    foreground:                  #FF9800;
     normal-foreground:           @foreground;
     alternate-normal-background: rgba ( 40, 40, 40, 100 % );
     red:                         rgba ( 220, 50, 47, 100 % );
@@ -25,7 +25,7 @@
     lightbg:                     rgba ( 238, 232, 213, 100 % );
     selected-active-foreground:  rgba ( 29, 32, 33, 100 % );
     alternate-active-background: rgba ( 215, 153, 33, 100 % );
-    background:                  rgba ( 29, 32, 33, 100 % );
+    background:                  #101010;
     bordercolor:                 rgba ( 168, 153, 132, 100 % );
     alternate-normal-foreground: @foreground;
     normal-background:           rgba ( 29, 32, 33, 100 % );
