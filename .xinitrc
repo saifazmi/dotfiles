@@ -50,4 +50,5 @@ fi
 
 urxvtd -q -o -f &
 compton &
+megasync &
 exec i3
