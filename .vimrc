@@ -26,7 +26,7 @@ set showmatch       " When inserting brackets, highlight the matching one
 set hlsearch        " Highlight search results
 set incsearch       " Highlight search results as the search is typed
 set ruler           " Show line and cursor position
-set colorcolumn=80,120  " Highlight the 80th and 120th column
+"set colorcolumn=80,120  " Highlight the 80th and 120th column
 set listchars=tab:▸\ ,eol:¬ "Use the respective invisible characters
 
 syntax on           " Enable syntax highlighting

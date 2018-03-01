@@ -132,6 +132,7 @@ source $ZSH/oh-my-zsh.sh
   alias subl='subl3'
   alias gcal='gcalcli --monday calw 1'
   alias xclip='xclip -sel clip'
+  alias fdisk='sudo fdisk'
 #}}}
 
 # PRIVILEGED ACCESS {{{

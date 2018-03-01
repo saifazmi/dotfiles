@@ -122,9 +122,9 @@
     text-color:       @selected-normal-foreground;
 }
 #inputbar {
-    spacing:    0;
+    spacing:    0.3em;
     text-color: @normal-foreground;
-    padding:    1px ;
+    padding:    1px;
 }
 #case-indicator {
     spacing:    0;
