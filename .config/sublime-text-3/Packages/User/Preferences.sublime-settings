@@ -10,10 +10,10 @@
 	"caret_extra_top": 0,
 	"caret_extra_width": 7,
 	"caret_style": "phase",
-	"color_scheme": "Packages/Colorsublime - Themes/ZeroDarkMatrix.tmTheme",
+	"color_scheme": "Packages/ayu/ayu-dark.tmTheme",
 	"fade_fold_buttons": false,
 	"fold_buttons": true,
-	"font_face": "Hack",
+	"font_face": "Fira Code",
 	"font_options":
 	[
 		"subpixel_antialias"
@@ -32,7 +32,7 @@
 		120
 	],
 	"tab_size": 4,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "ayu-dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"word_wrap": true,
 	"wrap_width": 120

@@ -5,8 +5,10 @@
 	],
 	"installed_packages":
 	[
+		"A File Icon",
 		"Anaconda",
 		"Auto Close HTML Tags",
+		"ayu",
 		"Color Highlighter",
 		"ColorPicker",
 		"Colorsublime",
@@ -17,13 +19,17 @@
 		"GitGutter",
 		"GraphvizPreview",
 		"HTML-CSS-JS Prettify",
+		"Jinja2",
 		"Markdown Preview",
 		"MarkdownEditing",
 		"Package Control",
+		"requirementstxt",
 		"SideBarEnhancements",
+		"Skins",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
 		"SublimeLinter-json",
+		"SublimeLinter-pylint",
 		"WordCount"
 	]
 }

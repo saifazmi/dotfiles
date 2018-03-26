@@ -15,7 +15,8 @@
     "word_width": 80,
     "rulers":
     [
-        79
+        79,
+        120
     ],
 
     // Handle whitespaces
@@ -23,7 +24,7 @@
     "ensure_newline_at_eof_on_save": true,
 
     // White space and indent guide
-    "draw_white_space": "selection",
+    "draw_white_space": "all",
     "draw_indent_guides": true,
     "indent_guide_options":
     [

@@ -60,4 +60,4 @@ call vundle#end()            " required
 """""""""""""""""""
 " Colours and GUI "
 """""""""""""""""""
-set background=dark"
+set background=dark
