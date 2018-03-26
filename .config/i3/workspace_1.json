@@ -1,0 +1,77 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 452,
+       "width": 740,
+       "x": 0,
+       "y": 0
+    },
+    "name": "gtop",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^URxvt$",
+       "instance": "^urxvt$",
+       "title": "^gtop$"
+       //"transient_for": "^$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 452,
+               "width": 740,
+               "x": 0,
+               "y": 0
+            },
+            "name": "saif@archBox: ~",
+            "percent": 0.7,
+            "swallows": [
+               {
+               "class": "^URxvt$",
+               "instance": "^urxvt$"
+               //"title": "^saif\\@archBox\\:\\ \\~$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 452,
+               "width": 740,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ranger",
+            "percent": 0.3,
+            "swallows": [
+               {
+               "class": "^URxvt$",
+               "instance": "^urxvt$",
+               "title": "^ranger$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
