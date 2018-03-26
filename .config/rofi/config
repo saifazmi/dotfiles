@@ -1,6 +1,6 @@
 rofi.modi: run,window,ssh
 rofi.theme: ~/.config/rofi/gruvbox-dark-hard.rasi
-rofi.font: hack 14
+rofi.font: Hack 14
 rofi.lines: 6
 rofi.width: 30
 rofi.display-run: >

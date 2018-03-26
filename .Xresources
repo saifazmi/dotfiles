@@ -4,4 +4,3 @@ URxvt.font: xft:Hack:size=11
 URxvt.scrollBar: false
 URxvt.cursorBlink: true
 URxvt.internalBorder: 10
-
