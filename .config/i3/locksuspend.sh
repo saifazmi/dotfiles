@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
 source $HOME/.config/i3/lockscreen.sh
-pkill -u $USER -USR1 dunst
-playerctl pause && pkill -SIGRTMIN+10 i3blocks
-
-i3lock -e -n -i "$tmpbg" \
+i3lock -e -i "$tmpbg" \
     --insidecolor=#ffffff00         \
     --ringcolor=#c93636ff           \
     --linecolor=#ffffff00           \
@@ -23,6 +20,7 @@ i3lock -e -n -i "$tmpbg" \
     \
     --indicator                     \
     --composite                     \
-
-pkill -u $USER -USR2 dunst
-rm "$tmpbg"
+    
+rm "$tmpbg" &&
+sleep 1 &&
+systemctl suspend
