@@ -44,6 +44,9 @@ cp .zprofile dotfiles
 cp .zshrc dotfiles
 echo "// oh-my-zsh"
 cp --parents .oh-my-zsh/themes/classyTouch.zsh-theme dotfiles
+echo "// tmux"
+cp .tmux.conf dotfiles
+cp --parents .tmux/* dotfiles
 
 echo "==== Xorg ===="
 echo "// xinit"
