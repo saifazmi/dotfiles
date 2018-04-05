@@ -60,6 +60,10 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  sudo
+  python
+  pip
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -135,14 +139,14 @@ source $ZSH/oh-my-zsh.sh
   alias fdisk='sudo fdisk'
 #}}}
 
-# PRIVILEGED ACCESS {{{
-  if ! $_isroot; then
-    alias sudo='sudo '
-    alias scat='sudo cat'
-    alias svim='sudo vim'
-    alias root='sudo su'
-  fi
-#}}} 
+## PRIVILEGED ACCESS {{{
+#  if ! $_isroot; then
+#    alias sudo='sudo '
+#    alias scat='sudo cat'
+#    alias svim='sudo vim'
+#    alias root='sudo su'
+#  fi
+##}}} 
 
 # CUSTOM FUNCTIONS {{{
 

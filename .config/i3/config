@@ -97,16 +97,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # workspace names
-set $workspace1     "1 "
-set $workspace2     "2 "
-set $workspace3     "3 "
-set $workspace4     "4 "
-set $workspace5     "5 "
-set $workspace6     "6 "
-set $workspace7     "7 "
-set $workspace8     "8 "
-set $workspace9     "9 "
-set $workspace10    "10 "
+set $workspace1 "1 "
+set $workspace2 "2 "
+set $workspace3 "3 "
+set $workspace4 "4 "
+set $workspace5 "5 "
+set $workspace6 "6 "
+set $workspace7 "7 "
+set $workspace8 "8 "
+set $workspace9 "9 "
+set $workspace10 "10 "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -195,7 +195,7 @@ bar {
 		
         # class             border  backgr. text  
 		focused_workspace   #ff9800 #ff9800 #101010
-        active_workspace    #101010 #101010 #9e9e9e
+        active_workspace    #9e9e9e #9e9e9e #101010
         inactive_workspace  #101010 #101010 #9e9e9e
         urgent_workspace    #f44235 #f44235 #ffffff
         binding_mode        #e81d62 #e81d62 #ffffff
@@ -229,13 +229,13 @@ bindsym $mod+bracketright gaps inner all plus 2
 
 # Screen locker
 set $lock ~/.config/i3/lock.sh && sleep 1
-
+set $lockSuspend ~/.config/i3/locksuspend.sh
 # Power control mode
 set $power_control "[l]ock log[o]ut [s]uspend [r]eboot [p]oweroff"
 mode  $power_control {
 	bindsym l exec --no-startup-id $lock;               mode "default"
     bindsym o exec --no-startup-id i3-msg exit;         mode "default"
-    bindsym s exec --no-startup-id systemctl suspend; 	mode "default"
+    bindsym s exec --no-startup-id $lockSuspend;        mode "default"
     bindsym r exec --no-startup-id systemctl reboot;	mode "default"
     bindsym p exec --no-startup-id systemctl poweroff; 	mode "default"
 	
@@ -287,7 +287,6 @@ bindsym XF86MonBrightnessUp   exec light -A 2
 bindsym XF86MonBrightnessDown exec light -U 2
 
 # Printscreen saves screenshot (with shift only focused window)
-## break this down into a screenshot mode just like the powersection above
 bindsym --release Print       	   exec --no-startup-id scrot ~/Pictures/screenshots/screenshot-%Y-%m-%d-%T.png
 bindsym --release Shift+Print 	   exec --no-startup-id scrot -u ~/Pictures/screenshots/windowshot-%Y-%m-%d-%T.png
 bindsym --release $mod+Shift+Print exec --no-startup-id scrot -s ~/Pictures/screenshots/clipped-%Y-%m-%d-%T.png 
@@ -305,13 +304,12 @@ exec compton -f
 # Wallpaper
 exec feh --bg-fill ~/Pictures/wall.png || feh --bg-fill ~/Pictures/wall.jpg
 
-# Load workspace layout
-exec --no-startup-id ~/.config/i3/load_layout.sh
+# Init tmux session
+exec --no-startup-id ~/.tmux/main.sh
+
 # Applications
+exec urxvt -e tmux attach -t main
 exec megasync
-exec urxvt -e gtop 
-exec urxvt
-exec urxvt -title "ranger" -e ranger
 exec firefox
 exec subl3
 exec spotify
