@@ -1,0 +1,58 @@
+! Options
+URxvt.font: xft:Hack:size=11
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.internalBorder: 10
+
+URxvt.perl-ext-common: default,matcher,font-size
+
+!Clickable URLs
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.matcher.rend.0: Uline Bold fg6
+
+! Colors
+! Adapted from Darkside
+! https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/Xresources/Darkside
+!
+URxvt.foreground:  #ff9800
+URxvt.background:  #101010
+URxvt.cursorColor: #bbbbbb
+!
+! Black
+URxvt.color0:      #000000
+URxvt.color8:      #626262
+!
+! Red
+URxvt.color1:      #e8341c
+URxvt.color9:      #e05a4f
+!
+! Green
+URxvt.color2:      #68c256
+URxvt.color10:     #77b869
+!
+! Yellow
+URxvt.color3:      #f2d42c
+URxvt.color11:     #efd64b
+!
+! Blue
+URxvt.color4:      #1c98e8
+URxvt.color12:     #387cd3
+!
+! Magenta
+URxvt.color5:      #8e69c9
+URxvt.color13:     #957bbe
+!
+! Cyan
+URxvt.color6:      #1c98e8
+URxvt.color14:     #3d97e2
+!
+! White
+URxvt.color7:      #bababa
+URxvt.color15:     #bababa
+!
+! Bold, Italic, Underline
+URxvt.colorBD:     #ffffff
+!URxvt.colorIT:
+!URxvt.colorUL:
+
