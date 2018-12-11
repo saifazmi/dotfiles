@@ -63,6 +63,7 @@ plugins=(
   sudo
   python
   pip
+  npm
   docker
 )
 
@@ -137,6 +138,7 @@ source $ZSH/oh-my-zsh.sh
   alias gcal='gcalcli --monday calw 1'
   alias xclip='xclip -sel clip'
   alias fdisk='sudo fdisk'
+  alias t='todo.sh'
 #}}}
 
 ## PRIVILEGED ACCESS {{{
@@ -146,7 +148,7 @@ source $ZSH/oh-my-zsh.sh
 #    alias svim='sudo vim'
 #    alias root='sudo su'
 #  fi
-##}}} 
+##}}}
 
 # CUSTOM FUNCTIONS {{{
 
@@ -194,11 +196,11 @@ source $ZSH/oh-my-zsh.sh
     ## FIND A FILE WITH A PATTERN IN NAME {{{
       ff() { find . -type f -iname '*'$*'*' -ls ; }
     #}}}
-    
+
     ## FIND A FILE WITH PATTERN $1 IN NAME AND EXECUTE $2 ON IT {{{
       fe() { find . -type f -iname '*'$1'*' -exec "${2:-file}" {} \;  ; }
     #}}}
-    
+
     ## MOVE FILENAMES TO LOWERCASE {{{
       lowercase() {
         for file ; do
@@ -238,7 +240,7 @@ source $ZSH/oh-my-zsh.sh
         done
       }
     #}}}
-    
+
     ## SWAP 2 FILENAMES AROUND, IF THEY EXIST {{{
       #(from Uzi's bashrc).
       swap() {
@@ -253,14 +255,14 @@ source $ZSH/oh-my-zsh.sh
         mv $TMPFILE "$2"
       }
     #}}}
-    
+
     ## FIND AND REMOVE EMPTY DIRECTORIES {{{
       fared() {
         read -p "Delete all empty folders recursively [y/N]: " OPT
         [[ $OPT == y ]] && find . -type d -empty -exec rm -fr {} \; &> /dev/null
       }
     #}}}
-    
+
     ## FIND AND REMOVE ALL DOTFILES {{{
       farad() {
         read -p "Delete all dotfiles recursively [y/N]: " OPT
@@ -268,11 +270,11 @@ source $ZSH/oh-my-zsh.sh
       }
     #}}}
   #}}}
-  
+
   # ENTER AND LIST DIRECTORY {{{
     function cd() { builtin cd -- "$@" && { [ "$PS1" = "" ] || ls -hrt --color; }; }
   #}}}
-  
+
   # SYSTEMD SUPPORT {{{
     if which systemctl &>/dev/null; then
       start() {

@@ -1,44 +1,35 @@
-{   
+{
+    // Theme
+    "workbench.colorTheme": "Ayu Dark",
+    "workbench.iconTheme": "material-icon-theme",
+
     // Font
     "editor.fontFamily": "Hack",
-    
+    "editor.fontLigatures": false,
+
+    // Tabs
+    "editor.insertSpaces": true,
+    "editor.useTabStops": true,
+
+    // Wordwrap
+    "editor.wordWrap": "wordWrapColumn",
+
+    // UI features
+    "editor.minimap.enabled": true,
+    "window.menuBarVisibility": "toggle",
+    "window.zoomLevel": 0,
+
     // Cursor
     "editor.cursorStyle": "block",
     "editor.cursorBlinking": "smooth",
-    
-    "[python]": {
-        /*****************
-        ** Code fromatting
-        ******************/
-        // Tabs
-        "editor.tabSize": 4,
-        "editor.insertSpaces": true,
-        "editor.useTabStops": true,
-        
-        // Word wrap
-        "editor.wordWrap": "off",
-        "editor.wordWrapColumn": 80,
-        "editor.rulers": [
-            79,
-            120
-        ],
 
-        // Handle whitespaces
-        "files.trimTrailingWhitespace": true,
-        "editor.trimAutoWhitespace": true,
-        "files.insertFinalNewline": true,
+    // Whitespace handling
+    "files.trimTrailingWhitespace": true,
+    "editor.trimAutoWhitespace": true,
+    "files.insertFinalNewline": true,
 
-        // White space and indet guide
-        "editor.renderWhitespace": "boundary",
-        "editor.renderIndentGuides": true,
-    },
-    
-    // Linter paths
-    "python.linting.flake8Path": "/usr/bin/flake8",
-    "python.linting.pylintPath": "/usr/bin/pylint",
-    
-    // Misc.
-    "window.menuBarVisibility": "toggle",
+    // MISC..
+    //// Files exclusion
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -49,8 +40,79 @@
         "**/venv": true,
         "**/.venv": true
     },
-    "workbench.colorTheme": "Ayu Dark",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.minimap.enabled": false,
-    "window.zoomLevel": 0
+    //// Reporting to microsoft
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    //// English settings
+    "cSpell.language": "en-GB",
+    "cSpell.userWords": [
+        "Azmi",
+        "Saif",
+    ],
+    //// Browser debugging and view
+    "view-in-browser.customBrowser": "google-chrome-stable",
+    "liveServer.settings.CustomBrowser": "google-chrome-stable",
+    //// Python
+    "autoDocstring.docstringFormat": "numpy",
+    "todohighlight.isEnable": true,
+
+    // Language settings
+    "[python]": {
+        // Tab size
+        "editor.tabSize": 4,
+        // Word wrap
+        "editor.wordWrapColumn": 99,
+        "editor.rulers": [
+            72,
+            79,
+            99
+        ],
+        // White space and indent guide
+        "editor.renderWhitespace": "boundary",
+        "editor.renderIndentGuides": true,
+        "editor.formatOnSave": true,
+    },
+    "[java]": {
+        // Word wrap
+        "editor.wordWrapColumn": 119,
+        "editor.rulers": [
+            99,
+            119
+        ],
+    },
+    "[javascript]": {
+        // Word wrap
+        "editor.wordWrapColumn": 99,
+        "editor.rulers": [
+            79,
+            99
+        ],
+    },
+    "[html]": {
+        // Tabs
+        "editor.tabSize": 2,
+        // Word wrap
+        "editor.wordWrap": "on",
+        "editor.formatOnSave": true,
+    },
+    "[css]": {
+        // Tabs
+        "editor.tabSize": 2,
+        // Word wrap
+        "editor.wordWrapColumn": 79,
+        "editor.rulers": [
+            79
+        ],
+        "editor.formatOnSave": true,
+    },
+    "[json]": {
+        "editor.formatOnSave": false
+    },
+    "githubPullRequests.hosts": [
+        {
+            "host": "https://github.com",
+            "username": "oauth",
+            "token": "system"
+        }
+    ]
 }

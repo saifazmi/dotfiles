@@ -16,7 +16,8 @@
 	"font_face": "Fira Code",
 	"font_options":
 	[
-		"subpixel_antialias"
+		"subpixel_antialias",
+		"no_calt"
 	],
 	"font_size": 11,
 	"ignored_packages":
@@ -34,6 +35,7 @@
 	"tab_size": 4,
 	"theme": "ayu-dark.sublime-theme",
 	"translate_tabs_to_spaces": true,
+	"ui_separator": true,
 	"word_wrap": true,
 	"wrap_width": 120
 }
