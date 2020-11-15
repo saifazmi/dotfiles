@@ -2,14 +2,17 @@
 	"bootstrapped": true,
 	"in_process_packages":
 	[
+		"Package Control"
 	],
 	"installed_packages":
 	[
 		"A File Icon",
+		"Agila Theme",
 		"Anaconda",
 		"Auto Close HTML Tags",
 		"ayu",
 		"Babel",
+		"BracketHighlighter",
 		"Color Highlighter",
 		"ColorPicker",
 		"Colorsublime",
@@ -25,11 +28,15 @@
 		"Jinja2",
 		"MarkdownEditing",
 		"MarkdownPreview",
+		"Materialize",
 		"Package Control",
+		"PlainTasks",
 		"requirementstxt",
+		"Seti_UI",
 		"SideBarEnhancements",
 		"Skins",
 		"SqlBeautifier",
+		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
 		"SublimeLinter-json",
