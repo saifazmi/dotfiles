@@ -1,3 +1,5 @@
+require('sizm.globals')
 require('sizm.options')
-require('sizm.remap')
-require('sizm.colorscheme')
+require('sizm.mappings')
+require('sizm.lazy')
+
