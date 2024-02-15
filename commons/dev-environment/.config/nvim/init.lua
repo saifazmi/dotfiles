@@ -1,1 +1,3 @@
-require('sizm')
+require('sizm.core')
+require('sizm.lazy')
+
