@@ -1,0 +1,10 @@
+[user]
+	name = Saif Azmi
+	email = saifazmi.dev@gmail.com
+	signingKey = ADE6DE4A9C0FF8A5
+[core]
+	editor = nvim
+[color]
+	ui = true
+[commit]
+	gpgsign = true
