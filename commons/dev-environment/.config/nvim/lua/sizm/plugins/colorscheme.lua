@@ -4,6 +4,7 @@ return {
     name = 'catppuccin',
     lazy = false,
     priority = 1000,
+
     config = function()
       -- load colorscheme on launch
       vim.cmd([[colorscheme catppuccin]])
@@ -13,6 +14,7 @@ return {
   {
     'folke/tokyonight.nvim',
     lazy = true,
+
     opts = { style = 'night' },
   }
 }
