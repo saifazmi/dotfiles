@@ -3,6 +3,7 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
     main = 'ibl',
+
     opts = {
       indent = {
         char = '│',
@@ -24,6 +25,7 @@ return {
     'echasnovski/mini.indentscope',
     version = '*',  -- stable
     event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+
     opts = {
       symbol = '│',
       options = { try_as_border = true }

@@ -4,6 +4,7 @@ return {
   dependencies = {
     'hrsh7th/cmp-nvim-lsp'
   },
+
   config = function()
     local lspconfig = require('lspconfig')
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
@@ -58,7 +59,7 @@ return {
     -- used to enable autocompletion
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
-    -- CHange the Diagnostic symbols in the sign column (gutter)
+    -- Change the Diagnostic symbols in the sign column (gutter)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = 'DiagnosticSign' .. type
