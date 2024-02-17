@@ -157,7 +157,7 @@
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
     # The color of the filler. You'll probably want to match the color of POWERLEVEL9K_MULTILINE
     # ornaments defined above.
-    typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=238
+    typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=0
     # Start filler from the edge of the screen if there are no left segments on the first line.
     typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_FIRST_SEGMENT_END_SYMBOL='%{%}'
     # End filler on the edge of the screen if there are no right segments on the first line.
@@ -185,7 +185,7 @@
 
   #################################[ os_icon: os identifier ]##################################
   # OS identifier color.
-  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=232
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=0
   typeset -g POWERLEVEL9K_OS_ICON_BACKGROUND=7
   # Custom icon.
   # typeset -g POWERLEVEL9K_OS_ICON_CONTENT_EXPANSION='⭐'
@@ -194,9 +194,9 @@
   # Transparent background.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_BACKGROUND=
   # Green prompt symbol if the last command succeeded.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=76
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=4
   # Red prompt symbol if the last command failed.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=196
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=1
   # Default prompt symbol.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   # Prompt symbol in command vi mode.
@@ -217,17 +217,17 @@
   # Current directory background color.
   typeset -g POWERLEVEL9K_DIR_BACKGROUND=4
   # Default current directory foreground color.
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND=254
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=0
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=250
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=0
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=255
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=0
   # Display anchor directory segments in bold.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   # Don't shorten directories that contain any of these files. They are anchors.
@@ -354,9 +354,9 @@
 
   #####################################[ vcs: git status ]######################################
   # Version control background colors.
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=2
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND=6
   typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND=3
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=2
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND=6
   typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND=3
   typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND=8
 
@@ -506,21 +506,21 @@
   # it will signify success by turning green.
   typeset -g POWERLEVEL9K_STATUS_OK=true
   typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
-  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=2
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=4
   typeset -g POWERLEVEL9K_STATUS_OK_BACKGROUND=0
 
   # Status when some part of a pipe command fails but the overall exit status is zero. It may look
   # like this: 1|0.
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE=true
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_VISUAL_IDENTIFIER_EXPANSION='✔'
-  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=2
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=3
   typeset -g POWERLEVEL9K_STATUS_OK_PIPE_BACKGROUND=0
 
   # Status when it's just an error code (e.g., '1'). No need to show it if prompt_char is enabled as
   # it will signify error by turning red.
   typeset -g POWERLEVEL9K_STATUS_ERROR=true
   typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='✘'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=3
+  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=1
   typeset -g POWERLEVEL9K_STATUS_ERROR_BACKGROUND=1
 
   # Status when the last command was terminated by a signal.
@@ -881,7 +881,7 @@
 
   ###########[ timewarrior: timewarrior tracking status (https://timewarrior.net/) ]############
   # Timewarrior color.
-  typeset -g POWERLEVEL9K_TIMEWARRIOR_FOREGROUND=255
+  typeset -g POWERLEVEL9K_TIMEWARRIOR_FOREGROUND=0
   typeset -g POWERLEVEL9K_TIMEWARRIOR_BACKGROUND=8
 
   # If the tracked task is longer than 24 characters, truncate and append "…".
@@ -1044,7 +1044,7 @@
 
   ##########[ nodenv: node.js version from nodenv (https://github.com/nodenv/nodenv) ]##########
   # Nodenv color.
-  typeset -g POWERLEVEL9K_NODENV_FOREGROUND=2
+  typeset -g POWERLEVEL9K_NODENV_FOREGROUND=4
   typeset -g POWERLEVEL9K_NODENV_BACKGROUND=0
   # Hide node version if it doesn't come from one of these sources.
   typeset -g POWERLEVEL9K_NODENV_SOURCES=(shell local global)
@@ -1065,7 +1065,7 @@
 
   ############[ nodeenv: node.js environment (https://github.com/ekalinin/nodeenv) ]############
   # Nodeenv color.
-  typeset -g POWERLEVEL9K_NODEENV_FOREGROUND=2
+  typeset -g POWERLEVEL9K_NODEENV_FOREGROUND=4
   typeset -g POWERLEVEL9K_NODEENV_BACKGROUND=0
   # Don't show Node version next to the environment name.
   typeset -g POWERLEVEL9K_NODEENV_SHOW_NODE_VERSION=false
@@ -1086,7 +1086,7 @@
   #######################[ go_version: go version (https://golang.org) ]########################
   # Go version color.
   typeset -g POWERLEVEL9K_GO_VERSION_FOREGROUND=255
-  typeset -g POWERLEVEL9K_GO_VERSION_BACKGROUND=2
+  typeset -g POWERLEVEL9K_GO_VERSION_BACKGROUND=4
   # Show go version only when in a go project subdirectory.
   typeset -g POWERLEVEL9K_GO_VERSION_PROJECT_ONLY=true
   # Custom icon.
@@ -1458,7 +1458,7 @@
 
   #[ aws_eb_env: aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/) ]#
   # AWS Elastic Beanstalk environment color.
-  typeset -g POWERLEVEL9K_AWS_EB_ENV_FOREGROUND=2
+  typeset -g POWERLEVEL9K_AWS_EB_ENV_FOREGROUND=4
   typeset -g POWERLEVEL9K_AWS_EB_ENV_BACKGROUND=0
   # Custom icon.
   # typeset -g POWERLEVEL9K_AWS_EB_ENV_VISUAL_IDENTIFIER_EXPANSION='⭐'
@@ -1640,7 +1640,7 @@
   typeset -g POWERLEVEL9K_BATTERY_LOW_THRESHOLD=20
   typeset -g POWERLEVEL9K_BATTERY_LOW_FOREGROUND=1
   # Show battery in green when it's charging or fully charged.
-  typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=2
+  typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=4
   # Show battery in yellow when it's discharging.
   typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=3
   # Battery pictograms going from low to high level of charge.
