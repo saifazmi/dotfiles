@@ -7,8 +7,5 @@ return {
   keys = {
     { '-', '<cmd>Oil<CR>', { desc = 'Open parent directory' } }
   },
-  config = function()
-    require("oil").setup()
-    -- vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
-  end
+  config = true -- runs require('oil').setup()
 }
