@@ -14,6 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup(
   {
     { import = 'sizm.plugins' },
+    { import = 'sizm.plugins.utils' },
+    { import = 'sizm.plugins.ui' },
+    { import = 'sizm.plugins.file_management' },
+    { import = 'sizm.plugins.editor' },
     { import = 'sizm.plugins.lsp' }
   },
   {
