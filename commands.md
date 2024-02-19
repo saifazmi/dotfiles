@@ -39,3 +39,9 @@ $ strings .zsh_history_bad > .zsh_history
 $ fc -R .zsh_history
 ```
 **// source:** https://superuser.com/questions/957913/how-to-fix-and-recover-a-corrupt-history-file-in-zsh#957924
+
+### Print terminal colours
+```bash
+for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+```
+**// source:** https://github.com/romkatv/powerlevel10k/blob/17cd9e354a283edeb657d340e1bbc0a30de5f967/README.md?plain=1#L1330
