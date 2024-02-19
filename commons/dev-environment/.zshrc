@@ -115,10 +115,9 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias zshconfig="nvim ~/.zshrc"
-alias tmuxconfig="nvim ~/.config/tmux/tmux.conf"
-alias powerlineconfig="cd ~/.config/tmux-powerline; nvim ."
+alias tmuxconfig="cd ~/.config/tmux && nvim tmux.conf"
 alias vimconfig="vim ~/.vimrc"
-alias nvimconfig="cd ~/.config/nvim; nvim ."
+alias nvimconfig="cd ~/.config/nvim && nvim ."
 
 alias projects="cd ~/workspace/projects/; ls"
 alias prototypes="cd ~/workspace/prototypes/; ls"
