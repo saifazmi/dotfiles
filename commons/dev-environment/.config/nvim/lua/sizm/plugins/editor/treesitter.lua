@@ -2,7 +2,8 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   dependencies = {
-    'RRethy/nvim-treesitter-endwise'
+    'RRethy/nvim-treesitter-endwise',
+    'windwp/nvim-ts-autotag'
   },
 
   config = function ()
@@ -18,7 +19,8 @@ return {
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
-      endwise = { enable = true }
+      endwise = { enable = true },  -- dep: nvim-treesitter-endwise
+      autotag = { enable = true }   -- dep: nvim-ts-autotag
     })
   end
 }
