@@ -1,12 +1,12 @@
 return {
-  -- for fancy animated indent line
+  -- for fancy animated indent line highlight
   'echasnovski/mini.indentscope',
-  version = '*',  -- stable
+  version = '*', -- stable
   event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
 
   opts = {
     symbol = '│',
-    options = { try_as_border = true }
+    options = { try_as_border = true },
   },
 
   init = function()
@@ -16,11 +16,11 @@ return {
         'lazy',
         'mason',
         'oil',
-        'dashboard'
+        'dashboard',
       },
       callback = function()
         vim.b.miniindentscope_disable = true
-      end
+      end,
     })
-  end
+  end,
 }

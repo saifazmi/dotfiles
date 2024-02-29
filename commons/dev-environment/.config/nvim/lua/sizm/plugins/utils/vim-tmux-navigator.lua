@@ -1,4 +1,5 @@
 return {
+  -- consistent integrated navigation between nvim and tmux
   'christoomey/vim-tmux-navigator',
 
   cmd = {
@@ -6,7 +7,7 @@ return {
     'TmuxNavigateDown',
     'TmuxNavigateUp',
     'TmuxNavigateRight',
-    'TmuxNavigatePrevious'
+    'TmuxNavigatePrevious',
   },
 
   keys = {
@@ -14,7 +15,6 @@ return {
     { '<c-j>', '<cmd><C-U>TmuxNavigateDown<cr>' },
     { '<c-k>', '<cmd><C-U>TmuxNavigateUp<cr>' },
     { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
-    { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' }
-  }
+    { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
+  },
 }
-

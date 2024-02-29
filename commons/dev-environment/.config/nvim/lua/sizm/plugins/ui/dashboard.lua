@@ -1,21 +1,22 @@
 return {
+  -- dashboard for nvim startup
   'nvimdev/dashboard-nvim',
   event = 'VimEnter',
   dependencies = {
-    'nvim-tree/nvim-web-devicons'
+    'nvim-tree/nvim-web-devicons',
   },
 
   opts = function()
---    local neovim_logo = [[
---███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗
---████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║
---██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║
---██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║
---██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║
---╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝
---    ]]
---
---    local logo = string.rep('\n', 8) .. neovim_logo.. '\n\n'
+    --    local neovim_logo = [[
+    --███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗
+    --████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║
+    --██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║
+    --██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║
+    --██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║
+    --╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝
+    --    ]]
+    --
+    --    local logo = string.rep('\n', 8) .. neovim_logo.. '\n\n'
 
     local cyberpunk_samurai_logo = [[
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -65,38 +66,47 @@ return {
             action = 'ene | startinsert',
             desc = ' New file',
             icon = ' ',
-            key = 'n'
-          },
-          {
-            action = 'Telescope find_files',
-            desc = ' Find file',
-            icon = ' ',
-            key = 'f'
+            key = 'n',
           },
           {
             action = 'Telescope oldfiles',
             desc = ' Recent files',
             icon = ' ',
-            key = 'r'
+            key = 'r',
+          },
+          {
+            action = 'Telescope find_files hidden=true',
+            desc = ' Find file',
+            icon = ' ',
+            key = 'f',
           },
           {
             action = 'Telescope live_grep',
             desc = ' Find text',
             icon = ' ',
-            key = 'g'
+            key = 'g',
           },
-          { action = 'qa',
+          {
+            action = 'qa',
             desc = ' Quit',
             icon = ' ',
-            key = 'q'
+            key = 'q',
           },
         },
         footer = function()
           local stats = require('lazy').stats()
           local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
-          return { '⚡ Neovim loaded ' .. stats.loaded .. '/' .. stats.count .. ' plugins in ' .. ms .. 'ms' }
-        end
-      }
+          return {
+            '⚡ Neovim loaded '
+              .. stats.loaded
+              .. '/'
+              .. stats.count
+              .. ' plugins in '
+              .. ms
+              .. 'ms',
+          }
+        end,
+      },
     }
 
     for _, button in ipairs(opts.config.center) do
@@ -105,5 +115,5 @@ return {
     end
 
     return opts
-  end
+  end,
 }
