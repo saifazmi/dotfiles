@@ -1,11 +1,17 @@
 return {
+  -- view and edit files as vim buffer
   'stevearc/oil.nvim',
   dependencies = {
-    'nvim-tree/nvim-web-devicons'
+    'nvim-tree/nvim-web-devicons',
   },
 
   keys = {
-    { '-', '<cmd>Oil<CR>', { desc = 'Open parent directory' } }
+    { '-', '<cmd>Oil<CR>', { desc = 'Open parent directory' } },
   },
-  config = true -- runs require('oil').setup()
+
+  opts = {
+    view_options = { show_hidden = true },
+  },
+
+  config = true, -- runs require('oil').setup()
 }
