@@ -1,4 +1,5 @@
 return {
+  -- colorschemes for editor
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -6,9 +7,13 @@ return {
     priority = 1000,
 
     config = function()
-      -- load colorscheme on launch
-      vim.cmd([[colorscheme catppuccin]])
-    end
+      require('catppuccin').setup({
+        transparent_background = true, -- disables setting the background color.
+      })
+
+      -- setup must be called before loading
+      vim.cmd.colorscheme('catppuccin')
+    end,
   },
 
   {
@@ -16,6 +21,5 @@ return {
     lazy = true,
 
     opts = { style = 'night' },
-  }
+  },
 }
-
