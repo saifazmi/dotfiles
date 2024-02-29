@@ -6,25 +6,23 @@ if not vim.loop.fs_stat(lazypath) then
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
     '--branch=stable', -- latest stable release
-    lazypath
+    lazypath,
   })
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup(
-  {
-    { import = 'sizm.plugins' },
-    { import = 'sizm.plugins.utils' },
-    { import = 'sizm.plugins.ui' },
-    { import = 'sizm.plugins.file_management' },
-    { import = 'sizm.plugins.editor' },
-    { import = 'sizm.plugins.lsp' }
-  },
-  {
-    install = { colorscheme = { 'catppuccin' } },
-    checker = { enabled = true, notify = false },
-    change_detection = { notify = false }
-  }
-)
+require('lazy').setup({
+  { import = 'sizm.plugins' },
+  { import = 'sizm.plugins.utils' },
+  { import = 'sizm.plugins.ui' },
+  { import = 'sizm.plugins.file_management' },
+  { import = 'sizm.plugins.editor' },
+  { import = 'sizm.plugins.git' },
+  { import = 'sizm.plugins.lsp' },
+}, {
+  install = { colorscheme = { 'catppuccin' } },
+  checker = { enabled = true, notify = false },
+  change_detection = { notify = false },
+})
 
 vim.keymap.set('n', '<leader>l', '<cmd>Lazy<cr>', { desc = 'Lazy' })
