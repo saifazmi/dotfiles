@@ -18,3 +18,7 @@ rsync -av  ~/.config/tmux/tmux.conf ./commons/dev-environment/.config/tmux/
 echo "\nSyncronising ~/.config/nvim ..."
 rsync -av  ~/.config/nvim/ ./commons/dev-environment/.config/nvim/
 
+echo "---------------------------------------"
+echo "Git Status"
+echo "---------------------------------------"
+git status
