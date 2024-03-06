@@ -140,7 +140,7 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
     #}}}
 
     # GPG TERMINAL SIGNING
-    export GPG_TTY=$(tty)
+    export GPG_TTY=$TTY
     
     # SET DEFAULT VAGRANT PROVIDER
     export VAGRANT_DEFAULT_PROVIDER=virtualbox
@@ -166,11 +166,9 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
 
 
 ## PROGRAMMING LANGUAGES {{{
-
     # Ruby {{{
         eval "$(rbenv init - zsh)"
     #}}}
-
 #}}}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
