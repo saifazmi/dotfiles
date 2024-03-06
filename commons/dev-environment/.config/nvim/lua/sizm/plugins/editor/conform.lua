@@ -21,7 +21,7 @@ return {
         json = { 'prettier' },
         yaml = { 'prettier' },
 
-        python = { 'isort', 'black' },
+        python = { 'ruff_fix', 'ruff_format' },
         ruby = { 'rubocop' },
         go = { 'gofumt', 'goimports-reviser', 'golines' },
       },

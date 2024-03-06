@@ -41,9 +41,7 @@ return {
         'stylua', -- lua formatter
         'prettier', -- web dev frontend stack formatter
         'eslint_d', -- javascript & typescript linter
-        'isort', -- python imports sorter (formatter)
-        'black', -- python formatter
-        'pylint', -- python linter
+        'ruff', -- python linter and formatter
         'rubocop', -- ruby linter and formatter
         'gofumpt', -- go formatter
         'goimports-reviser', -- go imports formatter

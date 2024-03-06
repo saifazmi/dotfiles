@@ -12,7 +12,7 @@ return {
       javascriptreact = { 'eslint_d' },
       typescriptreact = { 'eslint_d' },
 
-      python = { 'pylint' },
+      python = { 'ruff' },
       ruby = { 'rubocop' },
     }
 
@@ -25,7 +25,7 @@ return {
       end,
     })
 
-    vim.keymap.set('n', '<leader>l', function()
+    vim.keymap.set('n', '<leader>i', function()
       lint.try_lint()
     end, { desc = 'Trigger linting for current file' })
   end,
