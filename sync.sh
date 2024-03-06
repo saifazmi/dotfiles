@@ -13,6 +13,8 @@ echo "\nSyncronising ~/.vimrc ..."
 rsync -av  ~/.vimrc ./commons/dev-environment/
 echo "\nSyncronising ~/.gitconfig ..."
 rsync -av  ~/.gitconfig ./commons/dev-environment/
+echo "\nSyncronising ~/.gitignore_global ..."
+rsync -av  ~/.gitignore_global ./commons/dev-environment/
 echo "\nSyncronising ~/.config/tmux ..."
 rsync -av  ~/.config/tmux/tmux.conf ./commons/dev-environment/.config/tmux/
 echo "\nSyncronising ~/.config/nvim ..."
