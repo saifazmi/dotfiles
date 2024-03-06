@@ -23,6 +23,7 @@ return {
 
         python = { 'isort', 'black' },
         ruby = { 'rubocop' },
+        go = { 'gofumt', 'goimports-reviser', 'golines' },
       },
 
       format_on_save = {
