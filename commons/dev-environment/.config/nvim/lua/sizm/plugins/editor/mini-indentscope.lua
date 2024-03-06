@@ -6,7 +6,10 @@ return {
 
   opts = {
     symbol = '│',
-    options = { try_as_border = true },
+    options = {
+      border = 'top',
+      try_as_border = true,
+    },
   },
 
   init = function()
