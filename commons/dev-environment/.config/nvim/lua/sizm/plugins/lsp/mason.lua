@@ -30,6 +30,7 @@ return {
         'tailwindcss',
         'pyright', -- python
         'solargraph', -- ruby
+        'gopls', -- go
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installtion = true, -- not the same as ensure_installed
@@ -44,6 +45,9 @@ return {
         'black', -- python formatter
         'pylint', -- python linter
         'rubocop', -- ruby linter and formatter
+        'gofumpt', -- go formatter
+        'goimports-reviser', -- go imports formatter
+        'golines', -- go long lines formatter
       },
     })
   end,
