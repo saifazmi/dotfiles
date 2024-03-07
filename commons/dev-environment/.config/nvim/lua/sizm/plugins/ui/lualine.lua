@@ -14,6 +14,19 @@ return {
         theme = 'catppuccin',
       },
       sections = {
+        lualine_b = {
+          { 'branch' },
+          { 'diff' },
+          {
+            'diagnostics',
+            symbols = {
+              error = ' ',
+              warn = ' ',
+              info = ' ',
+              hint = ' ',
+            },
+          },
+        },
         lualine_x = {
           {
             lazy_status.updates,
