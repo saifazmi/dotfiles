@@ -54,7 +54,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -78,13 +78,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    web-search
-    git
-    gh
-    gitignore
-    python
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  web-search
+  git
+  gh
+  gitignore
+  python
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -123,52 +123,74 @@ alias projects="cd ~/workspace/projects/; ls"
 alias prototypes="cd ~/workspace/prototypes/; ls"
 
 ## TOOLS CONFIG {{{
+  # COLORED MANUAL PAGES {{{
+    # @see http://www.tuxarena.com/?p=508
+    # For colourful man pages (CLUG-Wiki style)
+    if $_isxrunning; then
+      export PAGER=less
+      export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
+      export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
+      export LESS_TERMCAP_me=$'\E[0m'           # end mode
+      export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
+      export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
+      export LESS_TERMCAP_ue=$'\E[0m'           # end underline
+      export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+    fi
+  #}}}
 
-    # COLORED MANUAL PAGES {{{
-        # @see http://www.tuxarena.com/?p=508
-        # For colourful man pages (CLUG-Wiki style)
-        if $_isxrunning; then
-            export PAGER=less
-            export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
-            export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
-            export LESS_TERMCAP_me=$'\E[0m'           # end mode
-            export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-            export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
-            export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-            export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-        fi
-    #}}}
+  # TMUX {{{
+    # Colour Fix
+      export TERM=screen-256color-bce
+  #}}}
 
-    # GPG TERMINAL SIGNING
-    export GPG_TTY=$TTY
-    
-    # SET DEFAULT VAGRANT PROVIDER
-    export VAGRANT_DEFAULT_PROVIDER=virtualbox
+  # GPG {{{
+    # Terminal Signing Fix
+      export GPG_TTY=$TTY
+  #}}}
+
+  # VAGRANT {{{
+    # SET DEFAULT PROVIDER
+      export VAGRANT_DEFAULT_PROVIDER=virtualbox
+  #}}}
 #}}}
 
 # CUSTOM FUNCTIONS {{{
-    # UP {{{
-    # Goes up many dirs as the number passed as argument, if none goes up by 1 by default
-        up() {
-            local d=""
-            limit=$1
-            for ((i=1 ; i <= limit ; i++)); do
-                d=$d/..
-            done
-            d=$(echo $d | sed 's/^\///')
-            if [[ -z "$d" ]]; then
-                d=..
-            fi
-            cd $d
-        }
-    #}}}
+  # UP {{{
+    # Goes up many dirs as the number passed as argument,
+    # if none goes up by 1 by default
+    up() {
+      local d=""
+      limit=$1
+      for ((i=1 ; i <= limit ; i++)); do
+        d=$d/..
+      done
+      d=$(echo $d | sed 's/^\///')
+      if [[ -z "$d" ]]; then
+        d=..
+      fi
+      cd $d
+    }
+  #}}}
 #}}}
 
 
 ## PROGRAMMING LANGUAGES {{{
-    # Ruby {{{
-        eval "$(rbenv init - zsh)"
+  # Python {{{
+    # pyenv
+    #export PYENV_ROOT="$HOME/.pyenv"
+    #[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    #eval "$(pyenv init -)"
+  #}}}
+
+  # Ruby {{{
+    # rbenv
+    eval "$(rbenv init - zsh)"
+  #}}}
+
+  # Javascript {{{
+    # nvm (NodeJS) {{{
     #}}}
+  #}}}
 #}}}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
