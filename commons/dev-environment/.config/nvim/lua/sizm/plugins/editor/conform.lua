@@ -12,6 +12,7 @@ return {
         lua = { 'stylua' },
 
         html = { 'prettier' },
+        eruby = { 'erb_format' },
         css = { 'prettier' },
         javascript = { 'prettier' },
         typescript = { 'prettier' },
