@@ -43,6 +43,8 @@ return {
         'eslint_d', -- javascript & typescript linter
         'ruff', -- python linter and formatter
         'rubocop', -- ruby linter and formatter
+        'erb-lint', -- erb template linter
+        'erb-formatter', -- erb template formatter
         'gofumpt', -- go formatter
         'goimports-reviser', -- go imports formatter
         'golines', -- go long lines formatter

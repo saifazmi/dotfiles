@@ -9,6 +9,7 @@ return {
 
   config = function()
     local configs = require('nvim-treesitter.configs')
+    local autotag = require('nvim-ts-autotag')
 
     configs.setup({
       ensure_installed = {
@@ -17,6 +18,7 @@ return {
         'vimdoc',
         'query',
         'html',
+        'embedded_template', -- erb (eruby)
         'css',
         'javascript',
         'typescript',
@@ -28,6 +30,7 @@ return {
         'go',
         'rust',
         'markdown',
+        'xml',
         'yaml',
         'toml',
         'json',
@@ -39,6 +42,13 @@ return {
       indent = { enable = true },
       endwise = { enable = true }, -- dep: nvim-treesitter-endwise
       autotag = { enable = true }, -- dep: nvim-ts-autotag
+
+      -- to fix eruby autoclose
+      --  https://github.com/windwp/nvim-ts-autotag/issues/64
+      --  https://github.com/windwp/nvim-ts-autotag/issues/149
+      -- Even though support for eruby was added in:
+      --  https://github.com/windwp/nvim-ts-autotag/pull/104
+      autotag.setup({}),
     })
   end,
 }
