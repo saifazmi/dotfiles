@@ -5,6 +5,6 @@ return {
     'MaximizerToggle',
   },
   keys = {
-    { '<leader>z', '<cmd>MaximizerToggle<CR>' },
+    { '<leader>z', '<cmd>MaximizerToggle<CR>', desc = 'Maximise this split' },
   },
 }

@@ -9,7 +9,7 @@ return {
     'TroubleRefresh',
   },
   keys = {
-    { '<leader>t', '<cmd>TroubleToggle<CR>' },
+    { '<leader>t', '<cmd>TroubleToggle<CR>', desc = 'Toggle Trouble widnow' },
   },
 
   opts = {

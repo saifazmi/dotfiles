@@ -1,5 +1,5 @@
 return {
-  -- fuzzy file finder
+  -- fuzzy finder
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
   dependencies = {
@@ -27,11 +27,18 @@ return {
 
     local builtin = require('telescope.builtin')
 
-    vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-    vim.keymap.set('n', '<leader>fr', builtin.oldfiles, {})
-    vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-    vim.keymap.set('n', '<leader>fc', builtin.grep_string, {})
-    vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-    vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+    local keymap = vim.keymap -- for conciceness
+
+    -- file searches
+    keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files in cwd' })
+    keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Find recent files' })
+
+    -- string searches (grep)
+    keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find string in cwd' })
+    keymap.set('n', '<leader>fc', builtin.grep_string, { desc = 'Find string under cursor in cwd' })
+
+    -- vim searches (buffers, help_tags, qflist, etc.)
+    keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find open buffers' })
+    keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find NeoVim help_tags' })
   end,
 }
