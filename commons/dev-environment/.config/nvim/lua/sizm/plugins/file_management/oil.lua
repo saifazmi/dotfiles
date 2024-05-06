@@ -6,7 +6,7 @@ return {
   },
 
   keys = {
-    { '-', '<cmd>Oil<CR>', { desc = 'Open parent directory' } },
+    { '-', '<cmd>Oil<CR>', desc = 'Open parent directory' },
   },
 
   opts = {

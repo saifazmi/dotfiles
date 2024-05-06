@@ -16,30 +16,31 @@ return {
     -- keybindings
     keymap.set('n', '<leader>ha', function()
       harpoon:list():append()
-    end)
+    end, { desc = 'Harpoon this file' })
+
     keymap.set('n', '<leader>hs', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
-    end)
+    end, { desc = 'Show Harpoon board' })
 
     keymap.set('n', '<leader>1', function()
       harpoon:list():select(1)
-    end)
+    end, { desc = 'Harpooned file #1' })
     keymap.set('n', '<leader>2', function()
       harpoon:list():select(2)
-    end)
+    end, { desc = 'Harpooned file #2' })
     keymap.set('n', '<leader>3', function()
       harpoon:list():select(3)
-    end)
+    end, { desc = 'Harpooned file #3' })
     keymap.set('n', '<leader>4', function()
       harpoon:list():select(4)
-    end)
+    end, { desc = 'Harpooned file #4' })
 
     -- Toggle previous & next buffers stored within Harpoon list
-    vim.keymap.set('n', '<leader>hp', function()
+    keymap.set('n', '<leader>hp', function()
       harpoon:list():prev()
-    end)
-    vim.keymap.set('n', '<leader>hn', function()
+    end, { desc = 'Previous harpooned file' })
+    keymap.set('n', '<leader>hn', function()
       harpoon:list():next()
-    end)
+    end, { desc = 'Next harpooned file' })
   end,
 }
