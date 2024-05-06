@@ -39,12 +39,7 @@ return {
       keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
 
       opts.desc = 'Show buffer diagnostics'
-      keymap.set(
-        'n',
-        '<leader>D',
-        '<cmd>Telescope diagnostics bufnr=0<CR>',
-        opts
-      )
+      keymap.set('n', '<leader>D', '<cmd>Telescope diagnostics bufnr=0<CR>', opts)
 
       opts.desc = 'Show line diagnostics'
       keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
@@ -66,8 +61,7 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
-    local signs =
-      { Error = ' ', Warn = ' ', Info = ' ', Hint = ' ' }
+    local signs = { Error = ' ', Warn = ' ', Info = ' ', Hint = ' ' }
     for type, icon in pairs(signs) do
       local hl = 'DiagnosticSign' .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
@@ -77,9 +71,9 @@ return {
     lspconfig['lua_ls'].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      settings = {
+      settings = { -- custom settings for lua
         Lua = {
-          -- make the language server recognise 'vim' global
+          -- make the language server recognize "vim" global
           diagnostics = {
             globals = { 'vim' },
           },
