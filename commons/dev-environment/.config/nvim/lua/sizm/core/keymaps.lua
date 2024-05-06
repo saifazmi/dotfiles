@@ -3,6 +3,7 @@ local keymap = vim.keymap -- for conciseness
 vim.g.mapleader = ' ' -- remap <leader> to Space Bar key
 
 keymap.set('n', '<leader>e', vim.cmd.Ex) -- file explorer
+keymap.set('i', 'jj', '<Esc>', { noremap = true, desc = '<Esc>' }) -- remap jj to Esc in insert mode
 
 -- buffer management
 keymap.set('n', '<leader>bd', ':bd<CR>') -- delete buffer
