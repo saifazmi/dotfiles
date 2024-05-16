@@ -15,7 +15,7 @@ return {
 
     -- keybindings
     keymap.set('n', '<leader>ha', function()
-      harpoon:list():append()
+      harpoon:list():add()
     end, { desc = 'Harpoon this file' })
 
     keymap.set('n', '<leader>hs', function()
