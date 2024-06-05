@@ -24,6 +24,7 @@ return {
     mason_lspconfig.setup({
       ensure_installed = {
         'lua_ls',
+        'bashls',
         'html',
         'emmet_ls',
         'cssls',
@@ -39,6 +40,8 @@ return {
     mason_tool_installer.setup({
       ensure_installed = {
         'stylua', -- lua formatter
+        'shellcheck', -- bash linter
+        'shfmt', -- bash formatter
         'prettier', -- web dev frontend stack formatter
         'eslint_d', -- javascript & typescript linter
         'ruff', -- python linter and formatter
