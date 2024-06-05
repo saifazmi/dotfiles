@@ -7,6 +7,8 @@ return {
     local lint = require('lint')
 
     lint.linters_by_ft = {
+      bash = { 'shellcheck' },
+
       eruby = { 'erb_lint' },
       javascript = { 'eslint_d' },
       typescript = { 'eslint_d' },
