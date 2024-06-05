@@ -2,17 +2,14 @@ return {
   -- list of diagnostics, LSP ref, qfix list, etc.
   'folke/trouble.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  cmd = {
-    'Trouble',
-    'TroubleToggle',
-    'TroubleClose',
-    'TroubleRefresh',
-  },
+  cmd = 'Trouble',
   keys = {
-    { '<leader>t', '<cmd>TroubleToggle<CR>', desc = 'Toggle Trouble widnow' },
+    {
+      '<leader>t',
+      '<cmd>Trouble diagnostics toggle<CR>',
+      desc = 'Toggle Trouble (diagnostics) window',
+    },
   },
 
-  opts = {
-    use_diagnostic_signs = true,
-  },
+  opts = {},
 }
