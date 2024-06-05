@@ -8,6 +8,8 @@ keymap.set('n', '<leader>e', vim.cmd.Ex, { desc = 'Open Netrw' }) -- file explor
 
 -- buffer management
 keymap.set('n', '<leader>bd', ':bd<CR>', { desc = 'Delete this buffer' })
+keymap.set('n', '<leader>bn', ':bn<CR>', { desc = 'Switch to next buffer' })
+keymap.set('n', '<leader>bp', ':bp<CR>', { desc = 'Switch to previous buffer' })
 
 -- window management
 keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' })
