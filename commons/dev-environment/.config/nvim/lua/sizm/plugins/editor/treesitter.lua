@@ -41,7 +41,6 @@ return {
       highlight = { enable = true },
       indent = { enable = true },
       endwise = { enable = true }, -- dep: nvim-treesitter-endwise
-      autotag = { enable = true }, -- dep: nvim-ts-autotag
 
       -- to fix eruby autoclose
       --  https://github.com/windwp/nvim-ts-autotag/issues/64
