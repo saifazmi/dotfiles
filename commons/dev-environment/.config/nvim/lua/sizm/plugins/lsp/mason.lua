@@ -25,6 +25,7 @@ return {
       ensure_installed = {
         'lua_ls',
         'bashls',
+        'terraformls',
         'html',
         'emmet_ls',
         'cssls',
@@ -42,6 +43,7 @@ return {
         'stylua', -- lua formatter
         'shellcheck', -- bash linter
         'shfmt', -- bash formatter
+        'tflint', -- terraform linter
         'prettier', -- web dev frontend stack formatter
         'eslint_d', -- javascript & typescript linter
         'ruff', -- python linter and formatter

@@ -22,6 +22,7 @@ return {
 
         json = { 'prettier' },
         yaml = { 'prettier' },
+        terraform = { 'terraform_fmt' },
 
         python = { 'ruff_fix', 'ruff_format' },
         ruby = { 'rubocop' },

@@ -8,6 +8,7 @@ return {
 
     lint.linters_by_ft = {
       bash = { 'shellcheck' },
+      terraform = { 'tflint' },
 
       eruby = { 'erb_lint' },
       javascript = { 'eslint_d' },
