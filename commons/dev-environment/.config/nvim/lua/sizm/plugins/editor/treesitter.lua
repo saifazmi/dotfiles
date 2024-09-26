@@ -35,6 +35,8 @@ return {
         'toml',
         'json',
         'jsonc',
+        'terraform',
+        'hcl',
         'csv',
       },
       sync_install = false,
