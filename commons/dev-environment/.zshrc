@@ -151,6 +151,8 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
   # VAGRANT {{{
     # SET DEFAULT PROVIDER
       export VAGRANT_DEFAULT_PROVIDER=virtualbox
+  # THE FUCK {{{
+    eval $(thefuck --alias)
   #}}}
 #}}}
 
@@ -177,9 +179,9 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
 ## PROGRAMMING LANGUAGES {{{
   # Python {{{
     # pyenv
-    #export PYENV_ROOT="$HOME/.pyenv"
-    #[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-    #eval "$(pyenv init -)"
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
   #}}}
 
   # Ruby {{{
