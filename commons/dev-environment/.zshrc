@@ -150,7 +150,9 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
 
   # VAGRANT {{{
     # SET DEFAULT PROVIDER
-      export VAGRANT_DEFAULT_PROVIDER=virtualbox
+      export VAGRANT_DEFAULT_PROVIDER=parallels
+  #}}}
+
   # THE FUCK {{{
     eval $(thefuck --alias)
   #}}}
