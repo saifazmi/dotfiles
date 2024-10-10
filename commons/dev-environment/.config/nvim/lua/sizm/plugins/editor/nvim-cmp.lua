@@ -9,6 +9,7 @@ return {
     'saadparwaiz1/cmp_luasnip', -- source for LuaSnip
     'rafamadriz/friendly-snippets', -- useful snippets for diff languages
     'onsails/lspkind.nvim', -- vs-code like icons in autocomplete menu
+    'zbirenbaum/copilot-cmp', -- source for copilot
   },
 
   config = function()
@@ -41,6 +42,7 @@ return {
       -- sources for autocompletion
       -- order of the sources determines their recommendation order
       sources = cmp.config.sources({
+        { name = 'copilot' }, -- copilot
         { name = 'nvim_lsp' }, -- lsp
         { name = 'luasnip' }, -- snippets
         { name = 'buffer' }, -- text within current buffer
@@ -53,6 +55,9 @@ return {
           maxwidth = 50,
           preset = 'codicons',
           ellipsis_char = '...',
+          symbol_map = {
+            Copilot = '',
+          },
         }),
       },
     })
