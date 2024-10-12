@@ -30,6 +30,7 @@ return {
         'go',
         'rust',
         'markdown',
+        'markdown_inline',
         'xml',
         'yaml',
         'toml',
