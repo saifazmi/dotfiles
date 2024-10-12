@@ -11,6 +11,7 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         bash = { 'shfmt' },
+        markdown = { 'prettier' },
 
         html = { 'prettier' },
         eruby = { 'erb_format' },

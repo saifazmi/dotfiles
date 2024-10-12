@@ -94,6 +94,12 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure markdown server
+    lspconfig['marksman'].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure terraform server
     lspconfig['terraformls'].setup({
       capabilities = capabilities,
