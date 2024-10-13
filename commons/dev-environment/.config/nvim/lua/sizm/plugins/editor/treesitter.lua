@@ -5,6 +5,7 @@ return {
   dependencies = {
     'RRethy/nvim-treesitter-endwise', -- auto close 'end' for ruby, lua, etc.
     'windwp/nvim-ts-autotag', -- auto close html tags
+    'phelipetls/jsonpath.nvim', -- jsonpath
   },
 
   config = function()

@@ -6,6 +6,7 @@ return {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
+    'Myzel394/jsonfly.nvim', -- search json file
   },
 
   config = function()
@@ -19,6 +20,19 @@ return {
             ['<C-j>'] = actions.move_selection_next,
             ['<C-h>'] = actions.select_horizontal,
           },
+        },
+      },
+      extensions = {
+        jsonfly = {
+          subkeys_display = 'waterfall',
+          mirror = true,
+          layout_strategy = 'vertical',
+          layout_config = {
+            mirror = true,
+            preview_height = 0.65,
+            prompt_position = 'top',
+          },
+          key_exact_length = true,
         },
       },
     })
