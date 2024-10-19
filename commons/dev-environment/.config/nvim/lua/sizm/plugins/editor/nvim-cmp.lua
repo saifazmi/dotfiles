@@ -25,11 +25,18 @@ return {
       completion = {
         completeopt = 'menu,menuone,preview,noselect',
       },
+
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
+
       mapping = cmp.mapping.preset.insert({
         ['<C-k>'] = cmp.mapping.select_prev_item(), -- prev suggestion
         ['<C-j>'] = cmp.mapping.select_next_item(), -- next suggestion
@@ -39,6 +46,7 @@ return {
         ['<C-c>'] = cmp.mapping.abort(), -- close window
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
       }),
+
       -- sources for autocompletion
       -- order of the sources determines their recommendation order
       sources = cmp.config.sources({
