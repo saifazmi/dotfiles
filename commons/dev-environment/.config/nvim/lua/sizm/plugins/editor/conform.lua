@@ -27,7 +27,7 @@ return {
 
         python = { 'ruff_fix', 'ruff_format' },
         ruby = { 'rubocop' },
-        go = { 'gofumt', 'goimports-reviser', 'golines' },
+        go = { 'gofumpt', 'goimports-reviser', 'golines' },
       },
 
       format_on_save = {
