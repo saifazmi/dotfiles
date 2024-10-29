@@ -1,3 +1,5 @@
+-- stylua: ignore start
+
 local opt = vim.opt           -- for conciseness
 
 -- [[ FORMATTING
@@ -10,7 +12,6 @@ local opt = vim.opt           -- for conciseness
 
 -- [[ INTERFACE
   opt.guicursor = ''          -- set cursor to block in insert mode
-  opt.colorcolumn = '80,120'  -- display a column marker
   opt.number = true           -- show line number
   opt.relativenumber = true   -- show relative line numbers
   opt.showmatch = true        -- when inserting brackets, highlight match
@@ -39,3 +40,4 @@ local opt = vim.opt           -- for conciseness
   opt.clipboard:append('unnamedplus') -- use system clipboard
 -- ]]
 
+-- stylua: ignore end
