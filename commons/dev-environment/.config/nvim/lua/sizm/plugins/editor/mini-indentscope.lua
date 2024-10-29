@@ -19,7 +19,11 @@ return {
         'lazy',
         'mason',
         'oil',
+        'oil_preview',
         'dashboard',
+        'undotree',
+        'Trouble',
+        'trouble',
       },
       callback = function()
         vim.b.miniindentscope_disable = true
