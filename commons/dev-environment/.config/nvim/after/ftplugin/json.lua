@@ -1,6 +1,3 @@
--- show json search
-vim.keymap.set('n', '<leader>fj', '<cmd>Telescope jsonfly<cr>', { desc = 'Open json(fly)' })
-
 -- show json path in the winbar
 if vim.fn.exists('+winbar') == 1 then
   vim.opt_local.winbar = '%{%v:lua.require\'jsonpath\'.get()%}'
