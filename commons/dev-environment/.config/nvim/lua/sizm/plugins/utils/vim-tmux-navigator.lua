@@ -1,6 +1,7 @@
 return {
   -- consistent integrated navigation between nvim and tmux
   'christoomey/vim-tmux-navigator',
+
   cmd = {
     'TmuxNavigateLeft',
     'TmuxNavigateDown',
