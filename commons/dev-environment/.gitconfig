@@ -9,3 +9,5 @@
 	ui = true
 [commit]
 	gpgsign = true
+[push]
+	autoSetupRemote = true
