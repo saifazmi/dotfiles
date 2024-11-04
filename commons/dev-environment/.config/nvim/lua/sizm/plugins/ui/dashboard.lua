@@ -84,7 +84,7 @@ return {
             action = 'Telescope live_grep',
             desc = ' Find text',
             icon = ' ',
-            key = 'g',
+            key = 's',
           },
           {
             action = 'qa',

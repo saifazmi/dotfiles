@@ -32,10 +32,11 @@ return {
     -- file searches
     keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find files in cwd' })
     keymap.set('n', '<leader>fr', builtin.oldfiles, { desc = 'Find recent files' })
+    keymap.set('n', '<leader>fg', builtin.git_files, { desc = 'Find Git files' })
 
     -- string searches (grep)
-    keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Find string in cwd' })
-    keymap.set('n', '<leader>fc', builtin.grep_string, { desc = 'Find string under cursor in cwd' })
+    keymap.set('n', '<leader>fs', builtin.live_grep, { desc = 'Find string in cwd' })
+    keymap.set('n', '<leader>fS', builtin.grep_string, { desc = 'Find string under cursor in cwd' })
 
     -- vim searches (buffers, help_tags, qflist, etc.)
     keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find open buffers' })
