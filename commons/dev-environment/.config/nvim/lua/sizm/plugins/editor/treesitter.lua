@@ -11,35 +11,40 @@ return {
     local configs = require('nvim-treesitter.configs')
     local autotag = require('nvim-ts-autotag')
 
+    -- stylua: ignore start
     configs.setup({
       ensure_installed = {
-        'lua',
-        'vim',
-        'vimdoc',
-        'query',
-        'html',
-        'embedded_template', -- erb (eruby)
-        'css',
-        'javascript',
-        'typescript',
-        'bash',
-        'c',
-        'cpp',
+        -- vim
+        'lua', 'vim', 'vimdoc', 'query',
+        -- git
+        'git_config', 'gitcommit', 'git_rebase', 'gitignore', 'gitattributes',
+
+        -- programming languages --
+        -- web dev
+        'html', 'css',
+        -- javascript
+        'javascript', 'typescript',
+        -- sys dev
+        'bash', 'c', 'cpp', 'cmake',
+        -- python
         'python',
-        'ruby',
-        'go',
-        'rust',
-        'markdown',
-        'markdown_inline',
-        'xml',
-        'yaml',
-        'toml',
-        'json',
-        'jsonc',
-        'terraform',
-        'hcl',
-        'csv',
+        -- go
+        'go', 'gomod', 'gowork', 'gosum',
+        -- ruby, rails
+        'ruby', 'embedded_template', -- erb (eruby)
+
+        -- data languages --
+        'csv','xml',
+        'sql',
+        -- json
+        'json', 'jsonc', 'json5',
+
+        -- markup languages --
+        -- markdown
+        'markdown', 'markdown_inline',
       },
+      -- stylua: ignore end 
+
       sync_install = false,
       highlight = { enable = true },
       indent = { enable = true },
