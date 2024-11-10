@@ -25,6 +25,10 @@ local opt = vim.opt           -- for conciseness
     extends = '»',
     precedes = '«'
   }
+  opt.foldenable = true       -- enable folding
+  opt.foldlevel = 99          -- open all folds by default
+  opt.foldmethod = 'expr'     -- fold based on expression
+  opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- ]]
 
 -- [[ SEARCH BEHAVIOUR
