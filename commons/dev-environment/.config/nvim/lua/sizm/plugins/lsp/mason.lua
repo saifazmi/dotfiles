@@ -12,6 +12,10 @@ return {
     local mason_tool_installer = require('mason-tool-installer')
 
     mason.setup({
+      -- for local mason development
+      -- registries = {
+      --   'file:~/workspace/oss/mason-registry',
+      -- },
       ui = {
         icons = {
           package_installed = '✓',
