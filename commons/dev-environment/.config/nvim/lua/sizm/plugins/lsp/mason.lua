@@ -38,6 +38,7 @@ return {
         'pyright', -- python
         'solargraph', -- ruby
         'gopls', -- go
+        'clangd', -- c, cpp
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installtion = true, -- not the same as ensure_installed
@@ -59,6 +60,8 @@ return {
         'gofumpt', -- go formatter
         'goimports-reviser', -- go imports formatter
         'golines', -- go long lines formatter
+        -- 'cppcheck', -- c, cpp linter
+        'clang-format', -- c, cpp formatter
       },
     })
   end,

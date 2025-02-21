@@ -152,5 +152,16 @@ return {
         },
       },
     })
+
+    -- configure c & cpp server
+    lspconfig['clangd'].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      init_options = {
+        clangdFileStatus = true,
+        completeUnimported = true,
+        usePlaceholders = true,
+      },
+    })
   end,
 }
