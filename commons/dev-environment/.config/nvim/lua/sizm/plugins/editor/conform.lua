@@ -28,6 +28,7 @@ return {
         python = { 'ruff_fix', 'ruff_format' },
         ruby = { 'rubocop' },
         go = { 'gofumpt', 'goimports-reviser', 'golines' },
+        c = { 'clang_format' },
       },
 
       format_on_save = {
