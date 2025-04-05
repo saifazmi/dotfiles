@@ -35,6 +35,7 @@ return {
         'emmet_ls',
         'cssls',
         'tailwindcss',
+        'ts_ls', --typescript
         'pyright', -- python
         'solargraph', -- ruby
         'gopls', -- go

@@ -130,6 +130,12 @@ return {
       on_attach = on_attach,
     })
 
+    -- configure typescript server (ts_ls)
+    lspconfig['ts_ls'].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
     -- configure python server (pyright)
     lspconfig['pyright'].setup({
       capabilities = capabilities,
