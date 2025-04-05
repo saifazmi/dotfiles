@@ -51,7 +51,7 @@ return {
         'shfmt', -- bash formatter
         'markdownlint', -- markdown linter
         'tflint', -- terraform linter
-        'prettier', -- web dev frontend stack + markdown formatter
+        'prettierd', -- web dev frontend stack + markdown formatter
         'eslint_d', -- javascript & typescript linter
         'ruff', -- python linter and formatter
         'rubocop', -- ruby linter and formatter
