@@ -11,18 +11,18 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         bash = { 'shfmt' },
-        markdown = { 'prettier' },
+        markdown = { 'prettierd' },
 
-        html = { 'prettier' },
+        html = { 'prettierd' },
         eruby = { 'erb_format' },
-        css = { 'prettier' },
-        javascript = { 'prettier' },
-        typescript = { 'prettier' },
-        javascriptreact = { 'prettier' },
-        typescriptreact = { 'prettier' },
+        css = { 'prettierd' },
+        javascript = { 'prettierd' },
+        typescript = { 'prettierd' },
+        javascriptreact = { 'prettierd' },
+        typescriptreact = { 'prettierd' },
 
-        json = { 'prettier' },
-        yaml = { 'prettier' },
+        json = { 'prettierd' },
+        yaml = { 'prettierd' },
         terraform = { 'terraform_fmt' },
 
         python = { 'ruff_fix', 'ruff_format' },
