@@ -130,7 +130,13 @@ return {
       on_attach = on_attach,
     })
 
-    -- configure typescript server (ts_ls)
+    -- configure eslint server for linting
+    lspconfig['eslint'].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+
+    -- configure javsacript & typescript server (ts_ls)
     lspconfig['ts_ls'].setup({
       capabilities = capabilities,
       on_attach = on_attach,
