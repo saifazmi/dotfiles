@@ -156,6 +156,12 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
   # THE FUCK {{{
     eval $(thefuck --alias)
   #}}}
+
+  # NGROK {{{
+    if command -v ngrok &>/dev/null; then
+      eval "$(ngrok completion)"
+    fi
+  #}}}
 #}}}
 
 # CUSTOM FUNCTIONS {{{
