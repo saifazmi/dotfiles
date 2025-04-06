@@ -15,17 +15,17 @@ return {
     configs.setup({
       ensure_installed = {
         -- vim
-        'lua', 'vim', 'vimdoc', 'query',
+        'lua', 'luadoc', 'vim', 'vimdoc', 'query',
         -- git
-        'git_config', 'gitcommit', 'git_rebase', 'gitignore', 'gitattributes',
+        'git_config', 'gitcommit', 'git_rebase', 'gitignore', 'gitattributes', 'diff',
 
         -- programming languages --
         -- web dev
-        'html', 'css',
+        'html', 'css', 'scss',
         -- javascript
-        'javascript', 'typescript',
+        'javascript', 'typescript', 'tsx',
         -- sys dev
-        'bash', 'c', 'cpp', 'cmake',
+        'bash', 'c', 'cpp', 'cmake', 'make', 'powershell',
         -- python
         'python',
         -- go
@@ -33,15 +33,27 @@ return {
         -- ruby, rails
         'ruby', 'embedded_template', -- erb (eruby)
 
-        -- data languages --
+        -- data formats --
         'csv','xml',
         'sql',
         -- json
         'json', 'jsonc', 'json5',
 
+        -- infra configs --
+        'dockerfile',
+        -- terraform
+        'terraform', 'hcl',
+
+        -- *nix configs --
+        'ssh_config', 'tmux',
+
         -- markup languages --
+        'latex',
         -- markdown
         'markdown', 'markdown_inline',
+
+        -- config formats --
+        'yaml', 'toml'
       },
       -- stylua: ignore end 
 
