@@ -35,6 +35,7 @@ return {
         'emmet_ls',
         'cssls',
         'tailwindcss',
+        'eslint', -- javascript and typescript linter via lsp
         'ts_ls', --typescript
         'pyright', -- python
         'solargraph', -- ruby
@@ -53,7 +54,6 @@ return {
         'markdownlint', -- markdown linter
         'tflint', -- terraform linter
         'prettierd', -- web dev frontend stack + markdown formatter
-        'eslint_d', -- javascript & typescript linter
         'ruff', -- python linter and formatter
         'rubocop', -- ruby linter and formatter
         'erb-lint', -- erb template linter
