@@ -23,7 +23,7 @@ return {
         -- web dev
         'html', 'css', 'scss',
         -- javascript
-        'javascript', 'typescript', 'tsx',
+        'javascript', 'typescript', 'tsx', 'jsdoc',
         -- sys dev
         'bash', 'c', 'cpp', 'cmake', 'make', 'powershell',
         -- python
