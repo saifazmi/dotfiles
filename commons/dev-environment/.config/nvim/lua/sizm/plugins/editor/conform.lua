@@ -22,6 +22,7 @@ return {
         typescriptreact = { 'prettierd' },
 
         json = { 'prettierd' },
+        jsonc = { 'prettierd' },
         yaml = { 'prettierd' },
         terraform = { 'terraform_fmt' },
 

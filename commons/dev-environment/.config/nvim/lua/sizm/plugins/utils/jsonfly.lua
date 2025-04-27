@@ -8,7 +8,7 @@ return {
       '<leader>fj',
       '<cmd>Telescope jsonfly<CR>',
       desc = 'Search json(fly)',
-      ft = { 'json', 'xml', 'yaml' },
+      ft = { 'json', 'jsonc', 'xml', 'yaml' },
       mode = 'n',
     },
   },
