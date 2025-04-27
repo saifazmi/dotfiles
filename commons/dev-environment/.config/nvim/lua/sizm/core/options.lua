@@ -25,6 +25,7 @@ local opt = vim.opt           -- for conciseness
     extends = '»',
     precedes = '«'
   }
+  opt.autoread = true         -- auto reload files changed outside of nvim
   opt.foldenable = true       -- enable folding
   opt.foldlevel = 99          -- open all folds by default
   opt.foldmethod = 'expr'     -- fold based on expression
