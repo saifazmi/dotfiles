@@ -1,18 +1,32 @@
 return {
-  -- fuzzy finder
+  -- picker with fuzzy finding capabilities
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
   dependencies = {
     { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     'nvim-lua/plenary.nvim',
     'nvim-tree/nvim-web-devicons',
+    'nvim-telescope/telescope-ui-select.nvim',
   },
 
   config = function()
     local telescope = require('telescope')
     local actions = require('telescope.actions')
+    local config = require('telescope.config')
+
+    -- clone default telescope configuration
+    local vimgrep_arguments = { unpack(config.values.vimgrep_arguments) }
+
+    -- add argument to search hidden files
+    table.insert(vimgrep_arguments, '--hidden')
+    -- don't want to search in the `.git` directory
+    table.insert(vimgrep_arguments, '--glob')
+    table.insert(vimgrep_arguments, '!**/.git/*')
+
     telescope.setup({
       defaults = {
+        -- `hidden = true` is not supported in text grep commands.
+        vimgrep_arguments = vimgrep_arguments,
         mappings = {
           i = {
             ['<C-k>'] = actions.move_selection_previous,
@@ -21,9 +35,21 @@ return {
           },
         },
       },
+      pickers = {
+        find_files = {
+          -- `hidden = true` will still show the inside of `.git/` as it's not `.gitignore`d.
+          find_command = { 'rg', '--files', '--hidden', '--glob', '!**/.git/*' },
+        },
+      },
+      extensions = {
+        ['ui-select'] = {
+          require('telescope.themes').get_dropdown({}),
+        },
+      },
     })
 
     telescope.load_extension('fzf')
+    telescope.load_extension('ui-select')
 
     local builtin = require('telescope.builtin')
 
