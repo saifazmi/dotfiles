@@ -1,4 +1,5 @@
 return {
+  -- powerful undo history visualiser
   'mbbill/undotree',
   lazy = false, -- needs to be explicitly set, because of the keys property
   keys = {
