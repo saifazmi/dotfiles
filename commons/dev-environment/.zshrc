@@ -187,9 +187,9 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
 ## PROGRAMMING LANGUAGES {{{
   # Python {{{
     # pyenv
-    export PYENV_ROOT="$HOME/.pyenv"
-    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init - zsh)"
+    # export PYENV_ROOT="$HOME/.pyenv"
+    # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    # eval "$(pyenv init - zsh)"
   #}}}
 
   # Ruby {{{
