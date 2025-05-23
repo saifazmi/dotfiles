@@ -36,8 +36,8 @@ return {
         'cssls',
         'tailwindcss',
         'eslint', -- javascript and typescript linter via lsp
-        'ts_ls', --typescript
-        'pyright', -- python
+        'ts_ls', -- javascript and typescript
+        'basedpyright', -- python
         'solargraph', -- ruby
         'gopls', -- go
         'clangd', -- c, cpp
