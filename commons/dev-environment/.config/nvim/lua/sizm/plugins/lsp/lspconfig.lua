@@ -7,7 +7,6 @@ return {
   },
 
   config = function()
-    local lspconfig = require('lspconfig')
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
     local keymap = vim.keymap -- for conciseness
@@ -73,7 +72,7 @@ return {
     })
 
     -- configure lua server (with special settings for vim)
-    lspconfig['lua_ls'].setup({
+    vim.lsp.config('lua_ls', {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = { -- custom settings for lua
@@ -92,75 +91,94 @@ return {
         },
       },
     })
+    vim.lsp.enable('lua_ls')
 
     -- configure bash server
-    lspconfig['bashls'].setup({
+    vim.lsp.config('bashls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('bashls')
 
     -- configure markdown server
-    lspconfig['marksman'].setup({
+    vim.lsp.config('marksman', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('marksman')
 
     -- configure terraform server
-    lspconfig['terraformls'].setup({
+    vim.lsp.config('terraformls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('terraformls')
 
     -- configure html server
-    lspconfig['html'].setup({
+    vim.lsp.config('html', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('html')
 
     -- configure emmet language server
-    lspconfig['emmet_ls'].setup({
+    vim.lsp.config('emmet_ls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('emmet_ls')
 
     -- configure css server
-    lspconfig['cssls'].setup({
+    vim.lsp.config('cssls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('cssls')
 
     -- configure tailwindcss server
-    lspconfig['tailwindcss'].setup({
+    vim.lsp.config('tailwindcss', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('tailwindcss')
 
     -- configure eslint server for linting
-    lspconfig['eslint'].setup({
+    vim.lsp.config('eslint', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('eslint')
 
     -- configure javsacript & typescript server (ts_ls)
-    lspconfig['ts_ls'].setup({
+    vim.lsp.config('ts_ls', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('ts_ls')
 
     -- configure python server (basedpyright)
-    lspconfig['basedpyright'].setup({
+    vim.lsp.config('basedpyright', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('basedpyright')
+
+    -- configure ruff server for linting and formatting
+    -- vim.lsp.config('ruff', {
+    --   capabilities = capabilities,
+    --   on_attach = on_attach,
+    -- })
+    -- vim.lsp.enable('ruff')
 
     -- configure ruby server (solargraph)
-    lspconfig['solargraph'].setup({
+    vim.lsp.config('solargraph', {
       capabilities = capabilities,
       on_attach = on_attach,
     })
+    vim.lsp.enable('solargraph')
 
     -- configure go server
-    lspconfig['gopls'].setup({
+    vim.lsp.config('gopls', {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -173,9 +191,10 @@ return {
         },
       },
     })
+    vim.lsp.enable('gopls')
 
     -- configure c & cpp server
-    lspconfig['clangd'].setup({
+    vim.lsp.config('clangd', {
       capabilities = capabilities,
       on_attach = on_attach,
       init_options = {
@@ -184,5 +203,6 @@ return {
         usePlaceholders = true,
       },
     })
+    vim.lsp.enable('clangd')
   end,
 }
