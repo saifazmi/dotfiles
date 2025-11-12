@@ -228,8 +228,17 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
       add-zsh-hook chpwd load-nvmrc
       load-nvmrc
     #}}}
+
+    # pnpm {{{
+      export PNPM_HOME="$HOME/Library/pnpm"
+      case ":$PATH:" in
+        *":$PNPM_HOME:"*) ;;
+        *) export PATH="$PNPM_HOME:$PATH" ;;
+      esac
+    # }}}
   #}}}
 #}}}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
