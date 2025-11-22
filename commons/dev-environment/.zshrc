@@ -81,6 +81,7 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   web-search
+  fzf-tab
   git
   gh
   gitignore
