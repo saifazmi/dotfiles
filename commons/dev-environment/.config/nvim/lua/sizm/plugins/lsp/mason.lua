@@ -4,12 +4,14 @@ return {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
     'WhoIsSethDaniel/mason-tool-installer.nvim',
+    'jay-babu/mason-nvim-dap.nvim',
   },
 
   config = function()
     local mason = require('mason')
     local mason_lspconfig = require('mason-lspconfig')
     local mason_tool_installer = require('mason-tool-installer')
+    local mason_nvim_dap = require('mason-nvim-dap')
 
     mason.setup({
       -- for local mason development
@@ -64,6 +66,13 @@ return {
         -- 'cppcheck', -- c, cpp linter
         'clang-format', -- c, cpp formatter
       },
+    })
+
+    mason_nvim_dap.setup({
+      ensure_installed = {
+        'js', -- js-debug-adapter: javascript and typescript debugger
+      },
+      automatic_installation = true,
     })
   end,
 }
