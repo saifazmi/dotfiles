@@ -238,6 +238,12 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
       esac
     # }}}
   #}}}
+
+  # JAVA {{{
+    # PATH and JAVA_HOME setup
+    export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+    export JAVA_HOME="/opt/homebrew/opt/openjdk"
+  # }}}
 #}}}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
