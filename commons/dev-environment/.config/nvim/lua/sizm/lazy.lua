@@ -19,6 +19,7 @@ require('lazy').setup({
   { import = 'sizm.plugins.git' },
   { import = 'sizm.plugins.lsp' },
   { import = 'sizm.plugins.ai' },
+  { import = 'sizm.plugins.debugger' },
 }, {
   install = { colorscheme = { 'catppuccin' } },
   checker = { enabled = true, notify = false },
