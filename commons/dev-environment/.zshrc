@@ -140,8 +140,6 @@ alias prototypes="cd ~/workspace/prototypes/; ls"
   #}}}
 
   # TMUX {{{
-    # Colour Fix
-      export TERM=screen-256color-bce
   #}}}
 
   # GPG {{{
