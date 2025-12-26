@@ -1,0 +1,220 @@
+#:schema https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/schema.json
+
+version = 4
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[upgrade]
+  source = 'cdn'
+  interval = '168h'
+  auto = false
+  notice = true
+
+# First line
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'path'
+    stlye = 'plain'
+    background = 'transparent'
+    foreground = 'p:blue'
+    template = '{{ .Path }}'
+
+    [blocks.segments.properties]
+      # NOTE: subject to change based on my future experience after spending
+      # sometime usig this config, leaning towards 'letter' for its automatic
+      # detection of folder's character length to display based on symbols
+      style = 'fish'
+      dir_length = 3
+      full_length_dirs = 2
+
+  [[blocks.segments]]
+    type = 'git'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:lavender'
+    # TODO: match symbols to lazygit symbols for consistency
+    template = """ {{ .HEAD }} \
+      <p:yellow>{{ if (.Staging.Changed) }}!{{ end }}\
+      {{ if (.Working.Changed) }}?{{ end }}\
+      {{ if gt .StashCount 0 }}*{{ end }}</> \
+      <p:teal>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>"""
+
+    [blocks.segments.properties]
+      branch_icon = ''
+      commit_icon = '@'
+      fetch_status = true
+      fetch_push_status = true
+
+  [[blocks.segments]]
+    type = 'aws'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:peach'
+    template = '  {{.Profile}}{{if .Region}}@{{.Region}}{{end}}'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+  overflow = 'hidden'
+
+  # CLI Tool segments
+  ## Infra tools
+  [[blocks.segments]]
+    type = 'terraform'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:mauve'
+    template = ' {{ .WorkspaceName }}{{ if .Version }} {{ .Version }}{{ end }}'
+
+    [blocks.segments.properties]
+      fetch_version = true
+      command = 'terraform' # can be 'tofu'
+
+  [[blocks.segments]]
+    type = 'docker'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:blue'
+    template = '  {{ .Context }}'
+
+    [blocks.segments.properties]
+      display_mode = 'files'
+
+  ## JS tools
+  [[blocks.segments]]
+    type = 'bun'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:rosewater'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+
+  [[blocks.segments]]
+    type = 'react'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:sky'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+
+  # Language segments
+  [[blocks.segments]]
+    type = 'go'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:sapphire'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+
+  [[blocks.segments]]
+    type = 'java'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:blue'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+
+  [[blocks.segments]]
+    type = 'node'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:green'
+    template = ' {{ if .Error }}{{ .Error }}{{ else }}{{if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }} {{ .Full }}{{ end }}'
+
+    [blocks.segments.properties]
+      fetch_package_manager = true
+      pnpm_icon = '<p:yellow>󰋁</>'
+      yarn_icon = '<p:sapphire>󰄛</>'
+      npm_icon = '<p:red></>'
+      bun_icon = '<p:rosewater></>'
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:yellow'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}'
+
+    [blocks.segments.properties]
+      display_mode = 'context'
+      tooling = ['python', 'python3', 'py', 'pyenv', 'uv']
+
+  [[blocks.segments]]
+    type = 'ruby'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:red'
+    template = '  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}'
+
+# Second line
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    type = 'text'
+    style = 'plain'
+    background = 'transparent'
+    foreground_templates = [
+      '{{if gt .Code 0}}p:red{{end}}',
+      '{{if eq .Code 0}}p:mauve{{end}}',
+    ]
+    template = '❯'
+
+[[blocks]]
+  type = 'rprompt'
+  overflow = 'hidden'
+
+  [[blocks.segments]]
+    type = 'executiontime'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'p:yellow'
+    template = '{{ .FormattedMs }}'
+
+    [blocks.segments.properties]
+      threshold = 5000
+      style = 'round'
+
+# For multi-line prompts
+[secondary_prompt]
+  background = 'transparent'
+  foreground = 'p:lavender'
+  template = '❯❯ '
+
+[transient_prompt]
+  background = 'transparent'
+  foreground_templates = [
+    '{{if gt .Code 0}}p:red{{end}}',
+    '{{if eq .Code 0}}p:mauve{{end}}',
+  ]
+  template = "<p:overlay0>[{{ dateInZone \"02-01-2006 @15:04:05\" (now) \"UTC\" }}]</> ❯ "
+
+[palette]
+  rosewater = '#f5e0dc'
+  flamingo = '#f2cdcd'
+  pink = '#f5c2e7'
+  mauve = '#cba6f7'
+  red = '#f38ba8'
+  maroon = '#eba0ac'
+  peach = '#fab387'
+  yellow = '#f9e2af'
+  green = '#a6e3a1'
+  teal = '#94e2d5'
+  sky = '#89dceb'
+  sapphire = '#74c7ec'
+  blue = '#89b4fa'
+  lavender = '#b4befe'
+  text = '#cdd6f4'
+  subtext1 = '#bac2de'
+  subtext0 = '#a6adc8'
+  overlay2 = '#9399b2'
+  overlay1 = '#7f849c'
+  overlay0 = '#6c7086'
+  surface2 = '#585b70'
+  surface1 = '#45475a'
+  surface0 = '#313244'
+  base = '#1e1e2e'
+  mantle = '#181825'
+  crust = '#11111b'
