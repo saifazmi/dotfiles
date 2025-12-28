@@ -36,7 +36,6 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     background = 'transparent'
     foreground = 'p:lavender'
-    # TODO: match symbols to lazygit symbols for consistency
     template = """ {{ .HEAD }} \
       <p:yellow>{{ if (.Staging.Changed) }}!{{ end }}\
       {{ if (.Working.Changed) }}?{{ end }}\
