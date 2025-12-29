@@ -4,10 +4,7 @@ return {
   dependencies = {
     'rcarriga/nvim-dap-ui',
     'nvim-neotest/nvim-nio',
-    {
-      'theHamsta/nvim-dap-virtual-text',
-      opts = {},
-    },
+    { 'theHamsta/nvim-dap-virtual-text', opts = {} },
   },
   lazy = true,
   event = 'VeryLazy',
