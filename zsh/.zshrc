@@ -54,7 +54,7 @@ alias ls='ls --color'
 
 alias zshconfig="nvim ~/.zshrc"
 alias tmuxconfig="cd ~/.config/tmux && nvim tmux.conf"
-alias vimconfig="vim ~/.vimrc"
+alias vimconfig="vim ~/.config/vim/vimrc"
 alias nvimconfig="cd ~/.config/nvim && nvim ."
 
 ##### Shell integrations #####
