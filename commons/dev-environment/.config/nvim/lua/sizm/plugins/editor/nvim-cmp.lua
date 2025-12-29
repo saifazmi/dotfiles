@@ -8,6 +8,7 @@ return {
     'L3MON4D3/LuaSnip', -- snippet engine
     'saadparwaiz1/cmp_luasnip', -- source for LuaSnip
     'rafamadriz/friendly-snippets', -- useful snippets for diff languages
+    { 'brenoprata10/nvim-highlight-colors', opts = {} },
     'onsails/lspkind.nvim', -- vs-code like icons in autocomplete menu
     'zbirenbaum/copilot-cmp', -- source for copilot
   },
@@ -52,21 +53,33 @@ return {
       sources = cmp.config.sources({
         { name = 'copilot' }, -- copilot
         { name = 'nvim_lsp' }, -- lsp
+        -- { name = 'lazydev', group_index = 0 }, -- configure luals for neovim config
         { name = 'luasnip' }, -- snippets
         { name = 'buffer' }, -- text within current buffer
         { name = 'path' }, -- file system paths
       }),
 
-      -- configure lspkind for vs-code like icons in completion menu
       formatting = {
-        format = lspkind.cmp_format({
-          maxwidth = 50,
-          preset = 'codicons',
-          ellipsis_char = '...',
-          symbol_map = {
-            Copilot = '',
-          },
-        }),
+        format = function(entry, item)
+          local color_item = require('nvim-highlight-colors').format(entry, { kind = item.kind })
+
+          -- configure lspkind for vs-code like icons in completion menu
+          item = lspkind.cmp_format({
+            maxwidth = 50,
+            preset = 'codicons',
+            ellipsis_char = '...',
+            symbol_map = {
+              Copilot = '',
+            },
+          })(entry, item)
+
+          -- use nvim-highlight-colors to show color boxes for color types
+          if color_item.abbr_hl_group then
+            item.kind_hl_group = color_item.abbr_hl_group
+            item.kind = color_item.abbr
+          end
+          return item
+        end,
       },
     })
   end,
