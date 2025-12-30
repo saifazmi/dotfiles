@@ -60,6 +60,8 @@
     " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
     Plugin 'ayu-theme/ayu-vim'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'christoomey/vim-tmux-navigator'
+
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
 " }}}
