@@ -67,6 +67,9 @@
 " }}}
 
 " KEYMAPS {{{
+    " renamp jj to <Esc> for insert mode
+    imap jj <Esc>
+
     " Split navigations
     nnoremap <C-J> <C-W><C-J>
     nnoremap <C-K> <C-W><C-K>
