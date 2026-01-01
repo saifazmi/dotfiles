@@ -1,0 +1,65 @@
+# GNU Stow configuration file
+# This file configures default behavior for stow commands
+
+# Target directory (where symlinks will be created)
+--target=$HOME
+
+# Verbosity level (1 = show operations, 2 = show more details)
+--verbose=1
+
+# Ignore patterns (Perl regex)
+# NOTE: Using --ignore here because .stow-local-ignore isn't being read in stow 2.4.1
+
+# macOS files
+--ignore='\.DS_Store'
+--ignore='^/Icon.*'
+
+# Project documentation
+--ignore='^/README.*'
+--ignore='^/LICENSE.*'
+--ignore='^/COPYING'
+--ignore='^/CHANGELOG\.md$'
+
+# Git configuration files
+--ignore='^/\.gitignore$'
+--ignore='^/\.gitattributes$'
+--ignore='^/\.pre-commit-config\.yaml$'
+--ignore='^/\.github'
+
+# Version control
+--ignore='^/\.git'
+--ignore='\.git'
+--ignore='^/\.gitmodules'
+--ignore='\.gitmodules'
+--ignore='\.gitignore'
+--ignore='RCS'
+--ignore='.+,v'
+--ignore='CVS'
+--ignore='\.\#.+'
+--ignore='\.cvsignore'
+--ignore='\.svn'
+--ignore='_darcs'
+--ignore='\.hg'
+
+# Editor files
+--ignore='.+~'
+--ignore='\#.*\#'
+--ignore='\.swp$'
+--ignore='\.swo$'
+
+# Backup directories
+--ignore='^/_old_dots_'
+--ignore='^/backup'
+--ignore='^/\.backup$'
+
+# Stow configuration files
+--ignore='^/\.stowrc$'
+--ignore='^/\.stow-local-ignore$'
+--ignore='^/Makefile$'
+
+# Temporary files
+--ignore='\.tmp$'
+--ignore='\.bak$'
+--ignore='\.backup$'
+--ignore='\.orig$'
+--ignore='\.rej$'
