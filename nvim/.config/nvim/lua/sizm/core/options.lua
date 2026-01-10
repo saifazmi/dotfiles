@@ -3,9 +3,9 @@
 local opt = vim.opt           -- for conciseness
 
 -- [[ FORMATTING
-  opt.tabstop = 4             -- width of the tab character
-  opt.softtabstop = 4         -- how many columns the tab key inserts
-  opt.shiftwidth = 4          -- width of 1 indentation level
+  opt.tabstop = 2             -- width of the tab character
+  opt.softtabstop = 2         -- how many columns the tab key inserts
+  opt.shiftwidth = 2          -- width of 1 indentation level
   opt.expandtab = true        -- expand tabs into spaces
   opt.smartindent = true      -- smart C-like autoindenting
 -- ]]
