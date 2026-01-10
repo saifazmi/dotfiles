@@ -18,6 +18,7 @@ local opt = vim.opt           -- for conciseness
   opt.wrap = false            -- disable line wrap
   opt.splitbelow = true       -- horizontal split editor to bottom
   opt.splitright = true       -- vertical split editor to right
+  opt.colorcolumn = '80,120'  -- ruler at 80 and 120 columns
   opt.listchars = {           -- set invisible characters
     tab = '▸ ',
     eol = '¬',
