@@ -1,8 +1,8 @@
+[app]
+overall = { bg = "#1e1e2e" }
+
 [mgr]
 cwd = { fg = "#94e2d5" }
-
-hovered         = { fg = "#1e1e2e", bg = "#cba6f7" }
-preview_hovered = { fg = "#1e1e2e", bg = "#cdd6f4" }
 
 find_keyword  = { fg = "#f9e2af", italic = true }
 find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
@@ -10,11 +10,11 @@ find_position = { fg = "#f5c2e7", bg = "reset", italic = true }
 marker_copied   = { fg = "#a6e3a1", bg = "#a6e3a1" }
 marker_cut      = { fg = "#f38ba8", bg = "#f38ba8" }
 marker_marked   = { fg = "#94e2d5", bg = "#94e2d5" }
-marker_selected = { fg = "#cba6f7", bg = "#cba6f7" }
+marker_selected = { fg = "#f2cdcd", bg = "#f2cdcd" }
 
 count_copied   = { fg = "#1e1e2e", bg = "#a6e3a1" }
 count_cut      = { fg = "#1e1e2e", bg = "#f38ba8" }
-count_selected = { fg = "#1e1e2e", bg = "#cba6f7" }
+count_selected = { fg = "#1e1e2e", bg = "#f2cdcd" }
 
 border_symbol = "│"
 border_style  = { fg = "#7f849c" }
@@ -26,8 +26,8 @@ active   = { fg = "#1e1e2e", bg = "#cdd6f4", bold = true }
 inactive = { fg = "#cdd6f4", bg = "#45475a" }
 
 [mode]
-normal_main = { fg = "#1e1e2e", bg = "#cba6f7", bold = true }
-normal_alt  = { fg = "#cba6f7", bg = "#313244"}
+normal_main = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
+normal_alt  = { fg = "#f2cdcd", bg = "#313244"}
 
 select_main = { fg = "#1e1e2e", bg = "#a6e3a1", bold = true }
 select_alt  = { fg = "#a6e3a1", bg = "#313244"}
@@ -35,13 +35,18 @@ select_alt  = { fg = "#a6e3a1", bg = "#313244"}
 unset_main  = { fg = "#1e1e2e", bg = "#f2cdcd", bold = true }
 unset_alt   = { fg = "#f2cdcd", bg = "#313244"}
 
+[indicator]
+parent = { fg = "#1e1e2e", bg = "#cdd6f4" }
+current = { fg = "#1e1e2e", bg = "#f2cdcd" }
+preview = { fg = "#1e1e2e", bg = "#cdd6f4" }
+
 [status]
 sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 progress_label  = { fg = "#ffffff", bold = true }
-progress_normal = { fg = "#89b4fa", bg = "#45475a" }
-progress_error  = { fg = "#f38ba8", bg = "#45475a" }
+progress_normal = { fg = "#a6e3a1", bg = "#45475a" }
+progress_error  = { fg = "#f9e2af", bg = "#f38ba8" }
 
 perm_type  = { fg = "#89b4fa" }
 perm_read  = { fg = "#f9e2af" }
@@ -50,31 +55,31 @@ perm_exec  = { fg = "#a6e3a1" }
 perm_sep   = { fg = "#7f849c" }
 
 [input]
-border   = { fg = "#cba6f7" }
+border   = { fg = "#f2cdcd" }
 title    = {}
 value    = {}
 selected = { reversed = true }
 
 [pick]
-border   = { fg = "#cba6f7" }
+border   = { fg = "#f2cdcd" }
 active   = { fg = "#f5c2e7" }
 inactive = {}
 
 [confirm]
-border     = { fg = "#cba6f7" }
-title      = { fg = "#cba6f7" }
-content    = {}
+border     = { fg = "#f2cdcd" }
+title      = { fg = "#f2cdcd" }
+body       = {}
 list       = {}
 btn_yes    = { reversed = true }
 btn_no     = {}
 
 [cmp]
-border = { fg = "#cba6f7" }
+border = { fg = "#f2cdcd" }
 
 [tasks]
-border  = { fg = "#cba6f7" }
+border  = { fg = "#f2cdcd" }
 title   = {}
-hovered = { underline = true }
+hovered = { fg = "#f5c2e7", bold = true }
 
 [which]
 mask            = { bg = "#313244" }
@@ -109,15 +114,25 @@ rules = [
 	# Documents
 	{ mime = "application/{pdf,doc,rtf}", fg = "#a6e3a1" },
 
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#45475a" },
+
+	# Special file
+	{ url = "*", is = "orphan", bg = "#f38ba8" },
+	{ url = "*", is = "exec"  , fg = "#a6e3a1" },
+
+	# Dummy file
+	{ url = "*", is = "dummy", bg = "#f38ba8" },
+	{ url = "*/", is = "dummy", bg = "#f38ba8" },
+
 	# Fallback
-	{ name = "*", fg = "#cdd6f4" },
-	{ name = "*/", fg = "#cba6f7" }
+	{ url = "*/", fg = "#f2cdcd" },
 ]
 
 [spot]
-border = { fg = "#cba6f7" }
-title  = { fg = "#cba6f7" }
-tbl_cell = { fg = "#cba6f7", reversed = true }
+border = { fg = "#f2cdcd" }
+title  = { fg = "#f2cdcd" }
+tbl_cell = { fg = "#f2cdcd", reversed = true }
 tbl_col = { bold = true }
 
 [icon]
