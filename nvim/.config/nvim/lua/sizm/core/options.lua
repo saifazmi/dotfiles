@@ -2,15 +2,15 @@
 
 local opt = vim.opt           -- for conciseness
 
--- [[ FORMATTING
+-- FORMATTING {{{
   opt.tabstop = 2             -- width of the tab character
   opt.softtabstop = 2         -- how many columns the tab key inserts
   opt.shiftwidth = 2          -- width of 1 indentation level
   opt.expandtab = true        -- expand tabs into spaces
   opt.smartindent = true      -- smart C-like autoindenting
--- ]]
+--}}}
 
--- [[ INTERFACE
+-- INTERFACE {{{
   opt.guicursor = ''          -- set cursor to block in insert mode
   opt.number = true           -- show line number
   opt.relativenumber = true   -- show relative line numbers
@@ -31,19 +31,19 @@ local opt = vim.opt           -- for conciseness
   opt.foldlevel = 99          -- open all folds by default
   opt.foldmethod = 'expr'     -- fold based on expression
   opt.foldexpr = 'nvim_treesitter#foldexpr()'
--- ]]
+--}}}
 
--- [[ SEARCH BEHAVIOUR
+-- SEARCH BEHAVIOUR {{{
   opt.ignorecase = true       -- ignore case in search patterns
   opt.smartcase = true        -- no ignore case when pattern has uppercase
--- ]]
+--}}}
 
--- [[ APPEARANCE
+-- APPEARANCE {{{
   opt.termguicolors = true    -- to make colour scheme work properly
--- ]]
+--}}}
 
--- [[ CLIPBOARD
+-- CLIPBOARD {{{
   opt.clipboard:append('unnamedplus') -- use system clipboard
--- ]]
+--}}}
 
 -- stylua: ignore end
