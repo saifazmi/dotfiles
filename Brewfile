@@ -78,7 +78,7 @@ brew 'lazygit'
 brew 'pre-commit'
 
 ## AI
-brew 'anomalyco/tap/opencode'
+brew 'anomalyco/tap/opencode', trusted: true
 cask 'claude'
 cask 'claude-code'
 brew 'hf'
@@ -114,7 +114,7 @@ cask 'utm'
 ## Cloud
 brew 'awscli'
 cask 'gcloud-cli'
-brew 'hashicorp/tap/terraform'
+brew 'hashicorp/tap/terraform', trusted: true
 brew 'opentofu'
 
 # Fonts

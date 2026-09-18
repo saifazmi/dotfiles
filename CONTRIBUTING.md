@@ -116,8 +116,11 @@ Four Brewfiles, picked by how essential the package is and where it makes sense:
 | `Brewfile.optional` | Nice to have, not needed to work | Asks `y/N` |
 | `Brewfile.mas` | Mac App Store only — needs `mas` and an App Store sign-in | Asks `y/N` |
 
-Keep each category alphabetised. `brew bundle list --file=<file>` checks that
-the file parses and every name resolves, without installing anything.
+Keep each category alphabetised. Formulae from third-party taps need
+`trusted: true` (e.g. `brew 'owner/tap/name', trusted: true`) — Homebrew
+refuses to load untrusted taps on a fresh machine, and `brew bundle` reads
+trust from the Brewfile. `make lint` checks that every file parses and every
+name resolves, without installing anything.
 
 ## Updating Dotfiles
 
