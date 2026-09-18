@@ -1,0 +1,53 @@
+# Full tier: the real thing on a clean macOS runner — install.sh end to end
+# (Xcode CLT, Homebrew, every essential from Brewfile), then stow into $HOME
+# and verify. Slow and exposed to upstream Homebrew breakage, so it runs on
+# demand and weekly — never on the push path. See ci.yml for the fast tier.
+name: CI (full install)
+
+on:
+  push:
+    branches: [ci-throwaway]
+  workflow_dispatch:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  HOMEBREW_NO_AUTO_UPDATE: 1
+  HOMEBREW_NO_INSTALL_CLEANUP: 1
+  HOMEBREW_NO_ENV_HINTS: 1
+  # Install what's missing; don't upgrade the runner's preinstalled formulae.
+  HOMEBREW_BUNDLE_NO_UPGRADE: 1
+
+jobs:
+  full:
+    name: install.sh, stow, verify
+    runs-on: macos-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Show what the runner already has
+        run: |
+          sw_vers
+          brew --version
+          ls -la "$HOME"
+
+      - name: Run install.sh unattended
+        env:
+          DOTFILES: ${{ github.workspace }}
+          DOTFILES_NONINTERACTIVE: 1
+        run: ./install.sh
+
+      - name: Stow every package into $HOME
+        run: make stow
+
+      - name: Verify links and Brewfile deps
+        run: make verify
+
+      - name: List unmet Brewfile deps
+        if: failure()
+        run: brew bundle check --verbose --no-upgrade --file=Brewfile || true

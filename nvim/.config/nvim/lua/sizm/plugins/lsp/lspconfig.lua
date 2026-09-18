@@ -7,6 +7,8 @@ return {
   },
 
   config = function()
+    vim.lsp.set_log_level('error')
+
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
     local keymap = vim.keymap -- for conciseness
@@ -53,7 +55,7 @@ return {
       keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
       opts.desc = 'Restart LSP'
-      keymap.set('n', '<leader>rs', '<cmd>LspRestart<CR>', opts)
+      keymap.set('n', '<leader>rs', '<cmd>lsp restart<CR>', opts)
     end
 
     -- used to enable autocompletion

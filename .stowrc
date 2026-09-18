@@ -1,0 +1,29 @@
+# GNU Stow configuration file
+# This file configures default behavior for stow commands
+
+# Target directory (where symlinks will be created)
+--target=$HOME
+
+# Verbosity level (1 = show operations, 2 = show more details)
+--verbose=1
+
+# Ignore patterns (Perl regex)
+# Note: Stow already ignores VCS dirs (.git, .svn, .hg), VCS files (.gitignore,
+# .gitmodules), editor backups (~, #*#), and docs (README, LICENSE) by default.
+# See: https://github.com/aspiers/stow/blob/master/default-ignore-list
+# Only add patterns for files NOT covered by stow's built-in defaults.
+
+# macOS metadata files
+--ignore='\.DS_Store'
+
+# Editor temporary files
+--ignore='\.swp$'
+--ignore='\.swo$'
+
+# Backup and temporary files
+--ignore='\.bak$'
+--ignore='\.tmp$'
+
+# Patch/merge artifacts
+--ignore='\.orig$'
+--ignore='\.rej$'

@@ -1,0 +1,9 @@
+# Peripheral-bound apps and drivers, installed via `brew bundle --file=Brewfile.hardware`.
+# Kept separate from the main Brewfile so `make install` can offer this as an
+# opt-in step, same pattern as Brewfile.optional and Brewfile.mas — these only
+# make sense on a machine with the matching hardware attached.
+
+# Hardware & drivers
+cask 'displaylink'
+cask 'elgato-stream-deck'
+cask 'logi-options+'

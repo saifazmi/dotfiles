@@ -1,0 +1,22 @@
+# Mac App Store apps, installed via `mas` (requires `brew bundle --file=Brewfile.mas`).
+# Kept separate from the main Brewfile so `make install` can offer this as an
+# opt-in step — you must be signed into the App Store first, or these fail.
+
+mas "Drafts", id: 1435957248
+mas "Hand Mirror", id: 1502839586
+mas "Session", id: 1521432881
+mas "TextSniper", id: 1528890965
+mas "Things 3", id: 904280696
+mas "WiFi Explorer Lite", id: 1408727408
+mas "WiFi Signal", id: 525912054
+mas "Xcode", id: 497799835
+mas "Yoink", id: 457622435
+
+# Safari extensions
+mas "1Password for Safari", id: 1569813296
+mas "Keepa - Price Tracker", id: 1533805339
+mas "Noir", id: 1592917505
+mas "OpenIn", id: 1643649331
+mas "Save to Raindrop.io", id: 1549370672
+mas "Save to Reader", id: 1640236961
+mas "Teleparty For Safari", id: 6471985961

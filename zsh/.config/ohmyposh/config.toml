@@ -4,11 +4,11 @@ version = 4
 final_space = true
 console_title_template = '{{ .Shell }} in {{ .Folder }}'
 
-[upgrade]
-  source = 'cdn'
-  interval = '168h'
-  auto = false
-  notice = true
+# [upgrade]
+#   source = 'cdn'
+#   interval = '168h'
+#   auto = false
+#   notice = true
 
 # First line
 [[blocks]]

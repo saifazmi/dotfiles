@@ -51,6 +51,14 @@ return {
     telescope.load_extension('fzf')
     telescope.load_extension('ui-select')
 
+    -- v0.12 compat: nvim-treesitter.configs and parsers.ft_to_lang are gone from
+    -- the archived main branch. Override ts_highlighter to use native vim.treesitter.
+    local preview_utils = require('telescope.previewers.utils')
+    preview_utils.ts_highlighter = function(bufnr, ft)
+      local lang = vim.treesitter.language.get_lang(ft) or ft
+      return pcall(vim.treesitter.start, bufnr, lang)
+    end
+
     local builtin = require('telescope.builtin')
 
     local keymap = vim.keymap -- for conciceness

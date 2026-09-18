@@ -58,12 +58,12 @@
   Plugin 'VundleVim/Vundle.vim'
 
   " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
-  Plugin 'ayu-theme/ayu-vim'
+  Plugin 'catppuccin/vim'
   Plugin 'scrooloose/nerdtree'
   Plugin 'christoomey/vim-tmux-navigator'
 
   " All of your Plugins must be added before the following line
-  call vundle#end()            " required
+  call vundle#end()       " required
 "}}}
 
 " KEYMAPS {{{
@@ -78,11 +78,6 @@
 "}}}
 
 " Colours and GUI {{{
-  if has('gui_running')
-    set termguicolors       " enable true colors support
-    let ayucolor="dark"     " for dark version of theme
-    colorscheme ayu
-  else
-    colorscheme ayu
-  endif
+  set termguicolors       " enable true colors support
+  colorscheme catppuccin_mocha
 "}}}

@@ -1,0 +1,39 @@
+# Fast tier: every push to master and every PR. Lints, runs the verifier's own
+# tests, and stows every package into a scratch target on a clean macOS runner.
+# Installs nothing from the Brewfiles — see ci-full.yml for the real install.
+name: CI
+
+on:
+  push:
+    branches: [master, ci-throwaway]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  fast:
+    name: Lint, test, stow
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Install tooling
+        run: brew install stow actionlint shellcheck bats-core
+
+      - name: Lint scripts, workflows, Brewfiles and package list
+        run: make lint
+
+      - name: Verifier tests
+        run: bats tests
+
+      - name: Stow every package into a scratch target
+        run: |
+          mkdir -p "$RUNNER_TEMP/home"
+          make stow STOW_TARGET="$RUNNER_TEMP/home"
+
+      - name: Verify the scratch target
+        run: make verify STOW_TARGET="$RUNNER_TEMP/home" VERIFY_FLAGS=--links-only

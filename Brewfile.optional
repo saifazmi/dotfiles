@@ -1,0 +1,129 @@
+# Nice-to-have apps and tools, installed via `brew bundle --file=Brewfile.optional`.
+# Kept separate from the main Brewfile so `make install` can offer this as an
+# opt-in step, same pattern as Brewfile.mas. Category comments mirror the
+# main Brewfile — some categories have members in both files.
+
+# Terminal
+brew 'asciinema'
+
+# CLI utilities
+brew 'fastfetch'
+brew 'hexedit'
+brew 'w3m'
+brew 'wget'
+
+# Compression & archiving
+brew 'sevenzip'
+brew 'unar'
+
+# Networking
+brew 'arp-scan-rs'
+cask 'charles'
+brew 'cloudflare-speed-cli'
+cask 'little-snitch'
+cask 'localcan'
+
+# AI
+cask 'chatgpt'
+cask 'codex'
+
+# Utilities
+brew 'clang-format'
+brew 'cmake'
+cask 'docker-desktop'
+brew 'hugo'
+brew 'jupyterlab'
+brew 'presenterm'
+brew 'yt-dlp'
+
+# Keyboard management
+cask 'keymapp'
+
+# ISO imaging tools
+cask 'balenaetcher'
+cask 'raspberry-pi-imager'
+
+# Mac features extensions
+cask 'bartender'
+cask 'bettertouchtool'
+cask 'blip'
+cask 'cleanshot'
+
+# Productivity & communication
+cask 'cardhop'
+cask 'evernote'
+cask 'fantastical'
+cask 'linear'
+cask 'loom'
+cask 'microsoft-excel'
+cask 'microsoft-powerpoint'
+cask 'microsoft-teams'
+cask 'microsoft-word'
+cask 'miro'
+cask 'nota'
+cask 'notion'
+cask 'readwise-ibooks'
+cask 'send-to-kindle'
+
+# Security & privacy
+cask 'micro-snitch'
+cask 'proton-drive'
+cask 'proton-mail'
+cask 'proton-meet'
+cask 'proton-pass'
+cask 'protonvpn'
+cask 'qbittorrent'
+
+# Video
+cask 'iina'
+cask 'plex'
+
+# Audio
+cask 'spotify'
+
+# Cloud storage
+cask 'google-drive'
+cask 'onedrive'
+cask 'resilio-sync'
+
+# Email
+cask 'hey-desktop'
+cask 'superhuman'
+
+# Browsers
+cask 'arc'
+cask 'brave-browser'
+cask 'firefox'
+cask 'google-chrome'
+cask 'tor-browser'
+cask 'zen'
+
+# Comms
+cask 'discord'
+cask 'signal'
+cask 'slack'
+cask 'telegram'
+cask 'whatsapp'
+
+# Hardware & drivers
+cask 'airbuddy'
+cask 'logitech-g-hub'
+cask 'qflipper'
+
+# Creative & media
+cask 'affinity-designer'
+cask 'affinity-photo'
+cask 'affinity-publisher'
+cask 'blender'
+cask 'imageoptim'
+cask 'phoenix-slides'
+
+# Gaming
+cask 'battle-net'
+cask 'epic-games'
+cask 'steam'
+
+# Misc utilities
+cask 'appcleaner'
+cask 'forklift'
+cask 'mactracker'

@@ -151,10 +151,22 @@
     export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
     export JAVA_HOME="/opt/homebrew/opt/openjdk"
   #}}}
+
 #}}}
 
 # PROMPT {{{
   if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
     eval "$(oh-my-posh init zsh --config ${XDG_CONFIG_HOME:-$HOME/.config}/ohmyposh/config.toml)"
+  fi
+#}}}
+
+# TMUX_AUTO_ATTACH {{{
+  # Auto-attach to tmux session on terminal start
+  # Only run if:
+  # - tmux is installed
+  # - not already in a tmux session
+  # - not in VSCode integrated terminal
+  if command -v tmux &> /dev/null && [ -z "$TMUX" ] && [ -z "$VSCODE_INJECTION" ]; then
+    tmux attach -t local || tmux new -s local
   fi
 #}}}

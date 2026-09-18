@@ -1,0 +1,39 @@
+#compdef example
+
+# Example completion file for a hypothetical tool called 'example'
+# This shows the basic structure of a zsh completion file
+
+_example() {
+  local -a commands
+  commands=(
+    'start:Start the service'
+    'stop:Stop the service'
+    'restart:Restart the service'
+    'status:Check service status'
+  )
+
+  _arguments -C \
+    '1: :->command' \
+    '*:: :->args'
+
+  case $state in
+    command)
+      _describe 'command' commands
+      ;;
+    args)
+      case $words[1] in
+        start|stop|restart)
+          _arguments \
+            '--force[Force the operation]' \
+            '--quiet[Suppress output]'
+          ;;
+        status)
+          _arguments \
+            '--verbose[Show detailed status]'
+          ;;
+      esac
+      ;;
+  esac
+}
+
+_example "$@"

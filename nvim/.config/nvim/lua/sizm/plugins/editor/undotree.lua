@@ -1,8 +1,3 @@
-return {
-  -- powerful undo history visualiser
-  'mbbill/undotree',
-  lazy = false, -- needs to be explicitly set, because of the keys property
-  keys = {
-    { '<leader>u', vim.cmd.UndotreeToggle, desc = 'Toggle undotree' },
-  },
-}
+-- Replaced by native Neovim v0.12 built-in.
+-- Setup is in lua/sizm/core/native-packages.lua
+return {}
